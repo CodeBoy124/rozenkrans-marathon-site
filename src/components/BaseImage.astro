@@ -1,13 +1,15 @@
 ---
 import { Image } from "astro:assets";
+import {clsList} from "../util/classes";
 
 interface Props {
     src: ImageMetadata;
     alt: string;
+    showShadow?: boolean;
     classes?: string[];
 }
 
-const {src, alt, classes = []} = Astro.props;
+const {src, alt, classes = [], showShadow = true} = Astro.props;
 
 ---
-<Image src={src} alt={alt} class:list={["rounded-2xl", "shadow-md/25", ...classes]}/>
+<Image src={src} alt={alt} class:list={clsList("w-full", "object-fill", "rounded-2xl", (showShadow ? "shadow-md/25" : null), ...classes)}/>
