@@ -12,4 +12,4 @@ interface Props {
 const {src, alt, classes = [], showShadow = true} = Astro.props;
 
 ---
-<Image src={src} alt={alt} class:list={clsList("w-full", "object-fill", "rounded-2xl", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+<Image src={src} alt={alt} class:list={clsList("w-full", "object-fill", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
