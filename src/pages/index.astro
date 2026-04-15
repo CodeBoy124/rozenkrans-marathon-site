@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import BaseImage from "../components/BaseImage.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import SeparationBar from "../components/SeparationBar.astro";
 
@@ -17,10 +18,8 @@ import { Tag } from "../util/types";
 		<title>Astro</title>
 	</head>
 	<body class:list={["bg-gray-100", "flex", "flex-col", "gap-content", "p-content"]}>
-		<h1>Astro</h1>
-		<div>
-			<ArticleCard src={my_test_image} title="My first article" date="15/04/2026" tag={Tag.READING} />
-		</div>
+		<BaseImage src={my_test_image} alt="A demo image" />
+		<ArticleCard src={my_test_image} title="My first article" date="15/04/2026" tag={Tag.READING} />
 		<SeparationBar />
 	</body>
 </html>
