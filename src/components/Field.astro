@@ -1,0 +1,15 @@
+---
+import { clsList } from '../util/classes';
+
+
+interface Props {
+    name: string;
+    onLight: boolean;
+    useFlatRight?: boolean;
+}
+
+const {name, onLight, useFlatRight = false} = Astro.props;
+
+---
+
+<input placeholder={name} type="text" class:list={clsList("border-solid", "border", "m-px", "focus:border-2", "focus:m-0", "rounded-base", "inset-shadow-sm/25", "shadow-sm/25", "outline-0", "p-inner", (onLight ? "text-secundary-on-light" : "text-secundary-on-dark"), (onLight ? "border-secundary-on-light" : "border-secundary-on-dark"), useFlatRight ? "rounded-r-none" : null)} />
