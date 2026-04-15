@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
 import ArticleCard from "../components/ArticleCard.astro";
 import SeparationBar from "../components/SeparationBar.astro";
@@ -12,24 +13,14 @@ import my_test_image from "../assets/frosted-glass-texture-thumb21.png";
 import { Tag } from "../util/types";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class:list={["bg-screen", "flex", "flex-col", "gap-content", "p-content"]}>
-		<BaseImage src={my_test_image} alt="A demo" />
-		<ArticleCard src={my_test_image} title="My first article" date="15/04/2026" tag={Tag.READING} />
-		<SeparationBar />
-		<Field name="My field" onLight={true} />
-		<Button onLight={true}>Ga</Button>
-		<SocialMediaIcon href="#" classes={["bg-blue-400"]}>
-			<span class="text-white">F</span>
-		</SocialMediaIcon>
-		<Faq question="Een vraag?" answer="Een antwoord op de vraag" client:load/>
-	</body>
-</html>
+<BaseLayout title="My website" >
+	<BaseImage loading="eager" src={my_test_image} alt="A demo" />
+	<ArticleCard src={my_test_image} title="My first article" date="15/04/2026" tag={Tag.READING} />
+	<SeparationBar />
+	<Field name="My field" onLight={true} />
+	<Button onLight={true}>Ga</Button>
+	<SocialMediaIcon href="#" classes={["bg-blue-400"]}>
+		<span class="text-white">F</span>
+	</SocialMediaIcon>
+	<Faq question="Een vraag?" answer="Een antwoord op de vraag" client:load/>
+</BaseLayout>

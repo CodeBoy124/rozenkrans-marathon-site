@@ -1,0 +1,28 @@
+---
+
+interface Props {
+    title: string;
+    icon?: string; // for example /favicon.ico
+}
+
+const {title, icon = null} = Astro.props;
+
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+        {icon && (
+            <link rel="icon" type="image/svg+xml" href={icon} />
+            <link rel="icon" href={icon} />
+        )}
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+        <slot name="head" />
+	</head>
+	<body class:list={["bg-screen", "flex", "flex-col", "gap-content", "p-content"]}>
+        <slot />
+	</body>
+</html>
+
