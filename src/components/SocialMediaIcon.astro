@@ -1,14 +1,18 @@
 ---
+import { Icon } from "astro-icon/components";
 
 interface Props {
     href: string;
-    classes?: string[]
+    iconId: string;
+    classes?: string[];
 }
 
-const {href, classes = []} = Astro.props;
+const {href, iconId, classes = []} = Astro.props;
 
 ---
 
-<a href={href} class:list={["w-12", "h-12", "rounded-full", "flex", "justify-center", "items-center", "inset-shadow-sm/25", ...classes]}>
-        <slot />
+<a href={href}>
+    <div class:list={["shadow-sm/25", "w-12", "h-12", "flex", "justify-center", "items-center", "rounded-full", ...classes]}>
+        <Icon name={iconId} size={38} />
+    </div>
 </a>

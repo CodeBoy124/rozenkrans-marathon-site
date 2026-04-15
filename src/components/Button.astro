@@ -4,9 +4,11 @@ import { clsList } from '../util/classes';
 interface Props {
     onLight: boolean;
     useFlatLeft?: boolean;
+    useFullRound?: boolean;
+    classes?: string[];
 }
 
-const {onLight, useFlatLeft = false} = Astro.props;
+const {onLight, useFlatLeft = false, useFullRound = false, classes = []} = Astro.props;
 ---
 
-<button class:list={clsList("cursor-pointer", "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "text-screen", "active:opacity-75")}><slot /></button>
+<button class:list={clsList("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
