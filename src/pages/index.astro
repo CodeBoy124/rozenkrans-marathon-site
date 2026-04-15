@@ -1,5 +1,7 @@
 ---
-
+import "../styles/global.css";
+import BaseImage from "../components/BaseImage.astro";
+import my_test_image from "../assets/frosted-glass-texture-thumb21.png";
 ---
 
 <html lang="en">
@@ -13,5 +15,6 @@
 	</head>
 	<body>
 		<h1>Astro</h1>
+		<BaseImage src={my_test_image} alt="Test image" />
 	</body>
 </html>
