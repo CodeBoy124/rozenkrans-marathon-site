@@ -1,0 +1,12 @@
+---
+import { clsList } from '../util/classes';
+
+interface Props {
+    onLight: boolean;
+    useFlatLeft?: boolean;
+}
+
+const {onLight, useFlatLeft = false} = Astro.props;
+---
+
+<button class:list={clsList("rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "text-screen", "active:opacity-75")}><slot /></button>
