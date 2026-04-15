@@ -9,4 +9,4 @@ interface Props {
 const {onLight, useFlatLeft = false} = Astro.props;
 ---
 
-<button class:list={clsList("rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "text-screen", "active:opacity-75")}><slot /></button>
+<button class:list={clsList("cursor-pointer", "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "text-screen", "active:opacity-75")}><slot /></button>

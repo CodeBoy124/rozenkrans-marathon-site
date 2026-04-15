@@ -6,6 +6,7 @@ import SeparationBar from "../components/SeparationBar.astro";
 import Field from "../components/Field.astro";
 import Button from "../components/Button.astro";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
+import Faq from "../components/Faq.svelte";
 
 import my_test_image from "../assets/frosted-glass-texture-thumb21.png";
 import { Tag } from "../util/types";
@@ -29,5 +30,6 @@ import { Tag } from "../util/types";
 		<SocialMediaIcon href="#" classes={["bg-blue-400"]}>
 			<span class="text-white">F</span>
 		</SocialMediaIcon>
+		<Faq question="Een vraag?" answer="Een antwoord op de vraag" client:load/>
 	</body>
 </html>

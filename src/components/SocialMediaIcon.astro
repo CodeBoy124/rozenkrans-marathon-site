@@ -9,8 +9,6 @@ const {href, classes = []} = Astro.props;
 
 ---
 
-<a href={href}>
-    <div class:list={["w-12", "h-12", "rounded-full", "flex", "justify-center", "items-center", "inset-shadow-sm/25", ...classes]}>
+<a href={href} class:list={["w-12", "h-12", "rounded-full", "flex", "justify-center", "items-center", "inset-shadow-sm/25", ...classes]}>
         <slot />
-    </div>
 </a>
