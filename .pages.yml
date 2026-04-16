@@ -14,11 +14,16 @@ content:
           min: 1
           collapsible:
             collapsed: true
-            summary: "{icon} ({link})"
+            summary: "{titel}"
         fields:
+          - name: titel
+            type: string
           - name: link
             type: string
+            required: true
           - name: icon
             type: string
+            required: true
           - name: achtergrond
             type: string
+            required: true
