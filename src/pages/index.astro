@@ -1,8 +1,34 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+import SeparationBar from "../components/SeparationBar.astro";
+import * as homePageText from "../content/index.md";
+import { getCollection } from "astro:content";
+import pageconfig from "../pageconfig.json";
+
+const postList = await getCollection('posts');
+postList.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
+const featuredPosts = postList.slice(0, 2);
+
 ---
 
 <BaseLayout title="My website" >
-	<BaseImage src="/pexels-rdne-5875445.jpg" alt="Dominicaanse priester met Rozenkrans in zijn handen" classes={["aspect-video"]} />
+	<BaseImage src={homePageText.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" classes={["aspect-video"]} />
+	<article class="prose text-center max-w-none">
+		<Fragment set:html={homePageText.compiledContent()} />
+	</article>
+
+	<SeparationBar />
+
+	<div class:list={["flex", "flex-col", "gap-content", "items-center"]}>
+		<h2 class:list={["text-2xl", "font-semibold"]}>Recente posts</h2>
+		<ul>
+			{featuredPosts.map(post => (
+				<li>
+					<ArticleCard href={pageconfig.sitelocatie + "post/" + post.id} title={post.data.titel} src={post.data.cover_image} date={post.data.created_at} tag={post.data.soort} />
+				</li>
+			))}
+		</ul>
+</div>
 </BaseLayout>

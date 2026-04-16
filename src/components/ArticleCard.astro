@@ -1,27 +1,27 @@
 ---
 import BaseImage from "./BaseImage.astro"
-import {Tag, articleTagToString} from "../util/types";
 
 interface Props {
-    src: ImageMetadata;
+    href: string;
+    src: ImageMetadata|string;
     title: string;
-    date: string;
-    tag: Tag;
+    date: Date;
+    tag: string;
     classes?: string[];
 }
 
-const {src, title, date, tag, classes = []} = Astro.props;
+const {href, src, title, date, tag, classes = []} = Astro.props;
 ---
 
 <div class:list={["w-full", "bg-white", "rounded-base", "shadow-md/25", ...classes]}>
-    <a href="#">
+    <a href={href}>
     <BaseImage src={src} alt={title} showShadow={false} classes={["aspect-video"]} />
     <div class:list={["p-inner", "flex", "flex-col", "gap-0", "justify-center", "items-center"]}>
         <span class:list={["font-semibold"]}>{title}</span>
         <p>
-            <span class:list={["italic"]}>{date}</span>
+            <span class:list={["italic"]}>{date.toLocaleDateString()}</span>
             -
-            <span>{articleTagToString(tag)}</span>
+            <span>{tag}</span>
         </p>
     </div>
     </a>

@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --spacing-page: 800px;
+  --spacing-page: 900px;
   --spacing-content: 30px;
   --spacing-inner: 7px;
   --spacing-base: 15px;

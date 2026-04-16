@@ -38,6 +38,7 @@ const {Content} = await render(post);
     {(post.data.galarij) && (
         <SeparationBar />
         <div class:list={["flex", "flex-col", "gap-content"]}>
+            <h2 class:list={["text-center", "text-2xl", "font-semibold"]}>Galarij</h2>
             {post.data.galarij.map((src, index) => (
                 <BaseImage src={src} alt={`Galarij afbeelding ${index}`} />
             ))}

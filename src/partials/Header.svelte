@@ -14,7 +14,7 @@ function toggleOpen() {
         <div class={["flex", "justify-between", "items-center", "text-white"]}>
             <a href={pageconfig.sitelocatie} class={["flex", "items-center", "gap-inner"]}>
                 <img src={logo.src} alt="Rozenkrans marathon logo" class={["h-12.5"]} />
-                <p>Rozenkrans<br />Marathon</p>
+                <h1>Rozenkrans<br />Marathon</h1>
             </a>
             <button aria-label="toggle navbar" onclick={toggleOpen}>
                 {#if !isOpen}
