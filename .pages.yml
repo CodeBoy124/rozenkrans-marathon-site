@@ -40,7 +40,8 @@ content:
     label: Posts
     type: collection
     path: src/content/posts
-    view: [titel, soort, created_at]
+    view:
+      fields: [titel, soort, created_at]
     fields:
       - name: titel
         type: string
