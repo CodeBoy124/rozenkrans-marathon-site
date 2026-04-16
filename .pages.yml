@@ -10,7 +10,8 @@ content:
     fields:
       - name: socials
         type: object
-        list: true
+        list:
+          collapsible: true
         fields:
           - name: link
             type: string
