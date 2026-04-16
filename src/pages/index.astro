@@ -1,21 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
-import ArticleCard from "../components/ArticleCard.astro";
-import SeparationBar from "../components/SeparationBar.astro";
-import Field from "../components/Field.astro";
-import Button from "../components/Button.astro";
-import Faq from "../components/Faq.svelte";
-
-import my_test_image from "../assets/frosted-glass-texture-thumb21.png";
-import { Tag } from "../util/types";
 ---
 
 <BaseLayout title="My website" >
-	<BaseImage loading="eager" src={my_test_image} alt="A demo" />
-	<ArticleCard src={my_test_image} title="My first article" date="15/04/2026" tag={Tag.READING} />
-	<SeparationBar />
-	<Field name="My field" onLight={true} />
-	<Button onLight={true} classes={["text-screen"]}>Ga</Button>
-	<Faq question="Een vraag?" answer="Een antwoord op de vraag" client:load/>
+	<BaseImage src="/pexels-rdne-5875445.jpg" alt="Dominicaanse priester met Rozenkrans in zijn handen" classes={["aspect-video"]} />
 </BaseLayout>
