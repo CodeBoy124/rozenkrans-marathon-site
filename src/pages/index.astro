@@ -23,7 +23,7 @@ const featuredPosts = postList.slice(0, 2);
 
 	<div class:list={["flex", "flex-col", "gap-content", "items-center"]}>
 		<h2 class:list={["text-2xl", "font-semibold"]}>Recente posts</h2>
-		<ul>
+		<ul class:list={["flex", "flex-col", "gap-content"]}>
 			{featuredPosts.map(post => (
 				<li>
 					<ArticleCard href={pageconfig.sitelocatie + "post/" + post.id} title={post.data.titel} src={post.data.cover_image} date={post.data.created_at} tag={post.data.soort} />
