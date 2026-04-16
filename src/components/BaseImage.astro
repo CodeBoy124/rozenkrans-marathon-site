@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import {clsList} from "../util/classes";
 
 interface Props {
-    src: ImageMetadata;
+    src: ImageMetadata|string;
     alt: string;
     showShadow?: boolean;
     classes?: string[];
@@ -13,4 +13,10 @@ interface Props {
 const {src, alt, classes = [], showShadow = true, loading = null} = Astro.props;
 
 ---
-<Image src={src} alt={alt} loading={loading} class:list={clsList("w-full", "object-fill", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+
+{(typeof(src) == "string") ? (
+    <img src={src} alt={alt} loading={loading} class:list={clsList("w-full", "object-fill", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+) : (
+    <Image src={src} alt={alt} loading={loading} class:list={clsList("w-full", "object-fill", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+)}
+

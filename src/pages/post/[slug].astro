@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import pageconfig from "../../pageconfig.json";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseImage from "../../components/BaseImage.astro";
+import SeparationBar from "../../components/SeparationBar.astro";
+
+export const getStaticPaths = (async () => {
+    const posts = await getCollection('posts');
+    return posts.map((post) => ({
+        params: {slug: post.id},
+        props: {post}
+    }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const {post} = Astro.props;
+const {Content} = await render(post);
+---
+
+<BaseLayout title={pageconfig.sitetitel + " | " + post.data.titel}>
+    <div class:list={["flex", "flex-col", "gap-inner", "items-center"]}>
+        <h1 class:list={["text-3xl", "font-semibold"]}>{post.data.titel}</h1>
+        <p>
+            <span><i>{post.data.created_at.toLocaleDateString()}</i></span>
+            -
+            <span>{post.data.soort}</span>
+        </p>
+    </div>
+    <BaseImage src={post.data.cover_image} alt={post.data.titel} />
+    <article class="prose max-w-none text-center">
+        <Content />
+    </article>
+    {(post.data.galarij) && (
+        <SeparationBar />
+        <div class:list={["flex", "flex-col", "gap-content"]}>
+            {post.data.galarij.map((src, index) => (
+                <BaseImage src={src} alt={`Galarij afbeelding ${index}`} />
+            ))}
+        </div>
+    )}
+</BaseLayout>

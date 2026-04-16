@@ -8,6 +8,16 @@ content:
     type: file
     path: src/pageconfig.json
     fields:
+      - name: sitetitel
+        label: site titel
+        type: string
+        required: true
+        description: De titel van de hele site
+      - name: sitelocatie
+        label: site locatie
+        type: string
+        required: true
+        description: De basis URL waar de website op staat
       - name: socials
         type: object
         list:
