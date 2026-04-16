@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { iso } from "astro:schema";
+import pageconfig from "../pageconfig.json"
 import logo from "../assets/rmw-icon-transparent.png";
 
 let isOpen = $state(false);
@@ -7,16 +7,15 @@ let isOpen = $state(false);
 function toggleOpen() {
     isOpen = !isOpen;
 }
-
 </script>
 
 <div class={["bg-primary", "sticky", "top-0", "z-50", "shadow-sm/25"]}>
     <header class={["py-base", "px-content", "flex", "flex-col", "gap-base", "w-full", "max-w-page", "m-auto"]}>
         <div class={["flex", "justify-between", "items-center", "text-white"]}>
-            <div class={["flex", "items-center", "gap-inner"]}>
+            <a href={pageconfig.sitelocatie} class={["flex", "items-center", "gap-inner"]}>
                 <img src={logo.src} alt="Rozenkrans marathon logo" class={["h-12.5"]} />
                 <p>Rozenkrans<br />Marathon</p>
-            </div>
+            </a>
             <button aria-label="toggle navbar" onclick={toggleOpen}>
                 {#if !isOpen}
                     <!-- ic:baseline-menu -->
