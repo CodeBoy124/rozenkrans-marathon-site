@@ -2,6 +2,8 @@
 import Field from "../components/Field.astro";
 import Button from "../components/Button.astro";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
+import pageconfig from "../pageconfig.json";
+
 
 // TODO: Credits https://icon-sets.iconify.design/ic/
 
@@ -9,8 +11,9 @@ import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 
 <footer class:list={["p-content", "flex", "flex-col", "gap-content", "w-full", "max-w-page", "m-auto"]}>
     <div class:list={["flex", "justify-center", "gap-content"]}>
-        <SocialMediaIcon iconId="ic:outline-photo-camera" href="https://www.instagram.com/rozenkransmarathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", classes={["bg-linear-to-t from-yellow-300 via-red-500 to-purple-700", "text-white"]} />
-        <SocialMediaIcon iconId="ic:outline-email" href="mailto:rozenkransmarathon@gmail.com" classes={["bg-blue-500", "text-white"]} />
+        {pageconfig.socials.map(v => (
+            <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
+        ))}
     </div>
     <div class:list={["flex", "flex-col", "items-center", "gap-inner"]}>
         <p class:list={["text-white", "font-semibold", "text-lg"]}>Registreer voor de maillijst</p>

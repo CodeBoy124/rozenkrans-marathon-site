@@ -18,6 +18,7 @@ content:
         fields:
           - name: titel
             type: string
+            required: false
             description: Dit komt niet op de echte website.
           - name: link
             type: string
@@ -27,6 +28,10 @@ content:
             type: string
             required: true
             description: Zoek op "https://icon-sets.iconify.design/ic/" naar een icoontje en plak de "Icon name" hier
+          - name: voorgrond
+            type: string
+            required: false
+            description: De voorgrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#000000 neer te zetten, maar gradients zijn ook mogelijk (via CSS)
           - name: achtergrond
             type: string
             required: true

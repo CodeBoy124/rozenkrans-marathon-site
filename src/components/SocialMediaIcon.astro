@@ -4,15 +4,17 @@ import { Icon } from "astro-icon/components";
 interface Props {
     href: string;
     iconId: string;
+    voorgrond?: string;
+    background?: string;
     classes?: string[];
 }
 
-const {href, iconId, classes = []} = Astro.props;
+const {href, iconId, voorgrond, background, classes = []} = Astro.props;
 
 ---
 
 <a href={href}>
-    <div class:list={["shadow-sm/25", "w-12", "h-12", "flex", "justify-center", "items-center", "rounded-full", ...classes]}>
+    <div style={(background ? `background: ${background};` : '') + (voorgrond ? `color: ${voorgrond};` : '')} class:list={["shadow-sm/25", "w-12", "h-12", "flex", "justify-center", "items-center", "rounded-full", ...classes]}>
         <Icon name={iconId} size={38} />
     </div>
 </a>
