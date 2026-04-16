@@ -23,8 +23,10 @@ const {title, icon = null} = Astro.props;
         <slot name="head" />
 	</head>
 	<body class:list={["bg-primary", "flex", "flex-col"]}>
-        <main class:list={["flex", "flex-col", "gap-content", "p-content", "bg-screen"]}>
-            <slot />
+        <main class:list={["bg-screen"]}>
+            <div class:list={["w-full", "max-w-page", "m-auto","flex", "flex-col", "gap-content", "p-content"]}>
+                <slot />
+            </div>
         </main>
         <Footer />
 	</body>

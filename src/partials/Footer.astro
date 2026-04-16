@@ -7,15 +7,15 @@ import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 
 ---
 
-<footer class:list={["p-content", "flex", "flex-col", "gap-content"]}>
+<footer class:list={["p-content", "flex", "flex-col", "gap-content", "w-full", "max-w-page", "m-auto"]}>
     <div class:list={["flex", "justify-center", "gap-content"]}>
         <SocialMediaIcon iconId="ic:outline-photo-camera" href="https://www.instagram.com/rozenkransmarathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==", classes={["bg-linear-to-t from-yellow-300 via-red-500 to-purple-700", "text-white"]} />
         <SocialMediaIcon iconId="ic:outline-email" href="mailto:rozenkransmarathon@gmail.com" classes={["bg-blue-500", "text-white"]} />
     </div>
     <div class:list={["flex", "flex-col", "items-center", "gap-inner"]}>
         <p class:list={["text-white", "font-semibold", "text-lg"]}>Registreer voor de maillijst</p>
-        <div class:list={["flex", "gap-0"]}>
-            <Field name="Uw email" onLight={false} useFlatRight={true} useFullRound={true} classes={["px-base"]} />
+        <div class:list={["flex", "gap-0", "w-full"]}>
+            <Field name="Uw email" onLight={false} useFlatRight={true} useFullRound={true} classes={["px-base", "w-full"]} />
             <Button onLight={false} useFlatLeft={true} useFullRound={true} classes={["text-primary", "px-base"]}>
                 Ga
             </Button>
