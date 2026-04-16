@@ -16,7 +16,7 @@ export default defineConfig({
     svelte(),
     icon({
       include: {
-        ic: ["outline-photo-camera", "outline-email"],
+        ic: ["outline-photo-camera", "outline-email", "baseline-close"],
       },
     }),
   ],
