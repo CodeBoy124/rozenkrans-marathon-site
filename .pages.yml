@@ -11,7 +11,10 @@ content:
       - name: socials
         type: object
         list:
-          collapsible: true
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{icon} ({link})"
         fields:
           - name: link
             type: string
