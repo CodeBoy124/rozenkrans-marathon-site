@@ -18,12 +18,16 @@ content:
         fields:
           - name: titel
             type: string
+            description: Dit komt niet op de echte website.
           - name: link
             type: string
             required: true
+            description: Een link naar het social media account, dus http(s)://...
           - name: icon
             type: string
             required: true
+            description: Zoek op "https://icon-sets.iconify.design/ic/" naar een icoontje en plak de "Icon name" hier
           - name: achtergrond
             type: string
             required: true
+            description: De achtergrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#FFFFFF neer te zetten, maar gradients zijn ook mogelijk (via CSS)
