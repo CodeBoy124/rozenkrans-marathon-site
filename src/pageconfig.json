@@ -1,6 +1,6 @@
 {
   "sitetitel": "Rozenkrans Marathon",
-  "sitelocatie": "http://localhost:4321/",
+  "sitelocatie": "http://192.168.178.50:3000/",
   "socials": [
     {
       "titel": "Instagram",

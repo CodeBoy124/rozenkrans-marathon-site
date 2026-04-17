@@ -23,7 +23,7 @@ const {Content} = await render(post);
 ---
 
 <BaseLayout title={pageconfig.sitetitel + " | " + post.data.titel}>
-    <div class:list={["flex", "flex-col", "gap-inner", "items-center"]}>
+    <div class:list={["flex", "flex-col", "gap-inner", "text-center"]}>
         <h1 class:list={["text-3xl", "font-semibold"]}>{post.data.titel}</h1>
         <p>
             <span><i>{post.data.created_at.toLocaleDateString()}</i></span>

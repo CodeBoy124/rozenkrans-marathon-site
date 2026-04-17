@@ -30,7 +30,7 @@ function toggleOpen() {
     </header>
     <div class={[isOpen ? "block" : "hidden", "absolute", "left-0", "top-full", "w-full"]}>
         <div class={["bg-primary", "w-full"]}>
-            <nav class={["m-auto", "w-page", "pb-base", "px-content"]}>
+            <nav class={["m-auto", "w-page", "max-w-full", "pb-base", "px-content"]}>
                 <ul class={["list-disc", "list-inside", "text-screen"]}>
                     <li><a href={pageconfig.sitelocatie + "post/"}>Posts</a></li>
                 </ul>
