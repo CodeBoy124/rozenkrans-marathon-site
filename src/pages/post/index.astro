@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SeparationBar from "../../components/SeparationBar.astro";
+import ArticleList from "../../components/ArticleList.astro";
+import pageconfig from "../../pageconfig.json";
+import * as postlist_md from "../../content/post-list.md";
+
+const postList = await getCollection('posts');
+postList.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
+---
+
+<BaseLayout title={pageconfig.sitetitel + " | Alle posts"}>
+    <article class="prose text-center max-w-none">
+		<Fragment set:html={postlist_md.compiledContent()} />
+	</article>
+	<SeparationBar />
+    <ArticleList title="Alle posts" articles={postList} />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry } from 'astro:content'
+import ArticleCard from './ArticleCard.astro';
+import pageconfig from "../pageconfig.json";
+
+interface Props {
+    title: string;
+    articles: CollectionEntry<'posts'>[]
+}
+
+const {title, articles} = Astro.props;
+---
+
+<div class:list={["flex", "flex-col", "gap-content", "items-center"]}>
+    <h2 class:list={["text-2xl", "font-semibold"]}>{title}</h2>
+    <ul class:list={["flex", "flex-col", "gap-content"]}>
+        {articles.map(article => (
+            <li>
+                <ArticleCard href={pageconfig.sitelocatie + "post/" + article.id} title={article.data.titel} src={article.data.cover_image} date={article.data.created_at} tag={article.data.soort} />
+            </li>
+        ))}
+    </ul>
+</div>

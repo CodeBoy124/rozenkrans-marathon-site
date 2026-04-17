@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
-import ArticleCard from "../components/ArticleCard.astro";
+import ArticleList from "../components/ArticleList.astro";
 import SeparationBar from "../components/SeparationBar.astro";
 import * as homePageText from "../content/index.md";
 import { getCollection } from "astro:content";
@@ -13,22 +13,11 @@ const featuredPosts = postList.slice(0, 2);
 
 ---
 
-<BaseLayout title="My website" >
+<BaseLayout title={pageconfig.sitetitel}>
 	<BaseImage src={homePageText.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" classes={["aspect-video"]} />
 	<article class="prose text-center max-w-none">
 		<Fragment set:html={homePageText.compiledContent()} />
 	</article>
-
 	<SeparationBar />
-
-	<div class:list={["flex", "flex-col", "gap-content", "items-center"]}>
-		<h2 class:list={["text-2xl", "font-semibold"]}>Recente posts</h2>
-		<ul class:list={["flex", "flex-col", "gap-content"]}>
-			{featuredPosts.map(post => (
-				<li>
-					<ArticleCard href={pageconfig.sitelocatie + "post/" + post.id} title={post.data.titel} src={post.data.cover_image} date={post.data.created_at} tag={post.data.soort} />
-				</li>
-			))}
-		</ul>
-</div>
+	<ArticleList title="Recente posts" articles={featuredPosts} />
 </BaseLayout>

@@ -32,8 +32,7 @@ function toggleOpen() {
         <div class={["bg-primary", "w-full"]}>
             <nav class={["m-auto", "w-page", "pb-base", "px-content"]}>
                 <ul class={["list-disc", "list-inside", "text-screen"]}>
-                    <li><a href="#">One</a></li>
-                    <li><a href="#">Two</a></li>
+                    <li><a href={pageconfig.sitelocatie + "post/"}>Posts</a></li>
                 </ul>
             </nav>
         </div>
