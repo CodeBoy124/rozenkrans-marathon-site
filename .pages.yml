@@ -73,16 +73,19 @@ content:
         fields:
           - name: items
             type: object
+            required: true
             list:
               min: 1
               collapsible:
                 collapsed: true
-                summary: "{titel}"
+                summary: "{vraag}"
             fields:
               - name: vraag
                 type: string
+                required: true
               - name: antwoord
                 type: text
+                required: true
           - name: body
             type: rich-text
             required: true
