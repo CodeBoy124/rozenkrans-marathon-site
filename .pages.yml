@@ -50,6 +50,56 @@ content:
     label: Paginas
     type: group
     items:
+      - name: home
+        label: Start
+        type: file
+        path: src/content/index.md
+        fields:
+          - name: cover_image
+            label: cover afbeelding
+            type: image
+            required: true
+            description: De afbeelding die bovenaan de post te zien is
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+      - name: faq
+        label: FAQ
+        type: file
+        path: src/content/faq.md
+        fields:
+          - name: items
+            type: object
+            list:
+              min: 1
+              collapsible:
+                collapsed: true
+                summary: "{titel}"
+            fields:
+              - name: vraag
+                type: string
+              - name: antwoord
+                type: text
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+      - name: postlist
+        label: Post lijst
+        type: file
+        path: src/content/post-list.md
+        fields:
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
       - name: posts
         label: Posts
         type: collection
@@ -79,33 +129,6 @@ content:
             required: false
             options:
               multiple: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
-      - name: home
-        label: Start
-        type: file
-        path: src/content/index.md
-        fields:
-          - name: cover_image
-            label: cover afbeelding
-            type: image
-            required: true
-            description: De afbeelding die bovenaan de post te zien is
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
-      - name: postlist
-        label: Post lijst
-        type: file
-        path: src/content/post-list.md
-        fields:
           - name: body
             type: rich-text
             required: true
