@@ -46,65 +46,69 @@ content:
             type: string
             required: true
             description: De achtergrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#FFFFFF neer te zetten, maar gradients zijn ook mogelijk (via CSS)
-  - name: posts
-    label: Posts
-    type: collection
-    path: src/content/posts
-    view:
-      fields: [titel, soort, created_at]
-    fields:
-      - name: titel
-        type: string
-        required: true
-      - name: soort
-        type: select
-        required: true
-        options:
-          values: [Evenement, Lezing, Overig]
-      - name: created_at
-        label: gemaakt op
-        type: date
-        required: true
-      - name: cover_image
-        label: cover afbeelding
-        type: image
-        required: true
-        description: De afbeelding die bovenaan de post te zien is
-      - name: galarij
-        type: image
-        required: false
-        options:
-          multiple: true
-      - name: body
-        type: rich-text
-        required: true
-        options:
-          format: markdown
-          media: false
-  - name: home
-    label: Startpagina
-    type: file
-    path: src/content/index.md
-    fields:
-      - name: cover_image
-        label: cover afbeelding
-        type: image
-        required: true
-        description: De afbeelding die bovenaan de post te zien is
-      - name: body
-        type: rich-text
-        required: true
-        options:
-          format: markdown
-          media: false
-  - name: postlist
-    label: Alle posts pagina
-    type: file
-    path: src/content/post-list.md
-    fields:
-      - name: body
-        type: rich-text
-        required: true
-        options:
-          format: markdown
-          media: false
+  - name: pages
+    label: Paginas
+    type: group
+    items:
+      - name: posts
+        label: Posts
+        type: collection
+        path: src/content/posts
+        view:
+          fields: [titel, soort, created_at]
+        fields:
+          - name: titel
+            type: string
+            required: true
+          - name: soort
+            type: select
+            required: true
+            options:
+              values: [Evenement, Lezing, Overig]
+          - name: created_at
+            label: gemaakt op
+            type: date
+            required: true
+          - name: cover_image
+            label: cover afbeelding
+            type: image
+            required: true
+            description: De afbeelding die bovenaan de post te zien is
+          - name: galarij
+            type: image
+            required: false
+            options:
+              multiple: true
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+      - name: home
+        label: Start
+        type: file
+        path: src/content/index.md
+        fields:
+          - name: cover_image
+            label: cover afbeelding
+            type: image
+            required: true
+            description: De afbeelding die bovenaan de post te zien is
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
+      - name: postlist
+        label: Post lijst
+        type: file
+        path: src/content/post-list.md
+        fields:
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
