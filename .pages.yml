@@ -84,13 +84,24 @@ content:
   - name: home
     label: Startpagina
     type: file
-    path: src/content/index.json
+    path: src/content/index.md
     fields:
       - name: cover_image
         label: cover afbeelding
         type: image
         required: true
         description: De afbeelding die bovenaan de post te zien is
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+  - name: postlist
+    label: Alle posts pagina
+    type: file
+    path: src/content/post-list.md
+    fields:
       - name: body
         type: rich-text
         required: true
