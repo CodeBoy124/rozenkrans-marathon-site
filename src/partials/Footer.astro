@@ -1,6 +1,5 @@
 ---
-import Field from "../components/Field.astro";
-import Button from "../components/Button.astro";
+import MaillistSubscribe from "../components/MaillistSubscribe.svelte";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import pageconfig from "../pageconfig.json";
 
@@ -15,13 +14,5 @@ import pageconfig from "../pageconfig.json";
             <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
         ))}
     </div>
-    <div class:list={["flex", "flex-col", "items-center", "gap-inner"]}>
-        <p class:list={["text-white", "font-semibold", "text-lg"]}>Registreer voor de maillijst</p>
-        <div class:list={["flex", "gap-0", "w-full"]}>
-            <Field name="Uw email" onLight={false} useFlatRight={true} useFullRound={true} classes={["px-base", "w-full"]} />
-            <Button onLight={false} useFlatLeft={true} useFullRound={true} classes={["text-primary", "px-base"]}>
-                Ga
-            </Button>
-        </div>
-    </div>
+    <MaillistSubscribe client:load />
 </footer>
