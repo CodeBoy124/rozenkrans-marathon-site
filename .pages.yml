@@ -9,21 +9,20 @@ content:
     path: src/pageconfig.json
     fields:
       - name: sitetitel
-        label: site titel
+        label: Site titel
         type: string
         required: true
-        description: De titel van de hele site
       - name: sitelocatie
-        label: site locatie
+        label: Site URL
         type: string
         required: true
-        description: De basis URL waar de website op staat
       - name: maillist
-        label: Maillijst form
+        label: Maillijst link
         type: string
         required: true
         description: De link naar bijv. Google Forms waarmee mensen zich kunnen aanmelden voor de maillijst
       - name: socials
+        label: Social media accounts
         type: object
         list:
           min: 1
@@ -32,27 +31,31 @@ content:
             summary: "{titel}"
         fields:
           - name: titel
+            label: Identificatie label
             type: string
             required: false
-            description: Dit komt niet op de echte website.
+            description: Dit komt niet op de echte website, maar wordt alleen op dit systeem gebruikt
           - name: link
+            label: Link naar account
             type: string
             required: true
-            description: Een link naar het social media account, dus http(s)://...
           - name: icon
+            label: Icoontje
             type: string
             required: true
             description: Zoek op "https://icon-sets.iconify.design/ic/" naar een icoontje en plak de "Icon name" hier
           - name: voorgrond
+            label: Voorgrond kleur/stijl
             type: string
             required: false
             description: De voorgrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#000000 neer te zetten, maar gradients zijn ook mogelijk (via CSS)
           - name: achtergrond
+            label: Achtergrond kleur/stijl
             type: string
             required: true
             description: De achtergrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#FFFFFF neer te zetten, maar gradients zijn ook mogelijk (via CSS)
   - name: pages
-    label: Paginas
+    label: Pagina's
     type: group
     items:
       - name: home
@@ -61,10 +64,9 @@ content:
         path: src/content/index.md
         fields:
           - name: cover_image
-            label: cover afbeelding
+            label: Omslagafbeelding
             type: image
             required: true
-            description: De afbeelding die bovenaan de post te zien is
           - name: body
             type: rich-text
             required: true
@@ -72,11 +74,12 @@ content:
               format: markdown
               media: false
       - name: faq
-        label: FAQ
+        label: FAQ (Vaak gestelde vragen)
         type: file
         path: src/content/faq.md
         fields:
           - name: items
+            label: Vraag/antwoord lijst
             type: object
             required: true
             list:
@@ -86,9 +89,11 @@ content:
                 summary: "{vraag}"
             fields:
               - name: vraag
+                label: Vraag
                 type: string
                 required: true
               - name: antwoord
+                label: Antwoord
                 type: text
                 required: true
           - name: body
@@ -103,11 +108,12 @@ content:
         path: src/content/upcomming-event.md
         fields:
           - name: cover_image
-            label: Cover afbeelding
+            label: Omslagafbeelding
             type: image
             required: false
           - name: signup
             label: Registratie link
+            description: Bijvoorbeeld voor Google Forms
             type: string
             required: false
           - name: body
@@ -117,7 +123,7 @@ content:
               format: markdown
               media: false
       - name: postlist
-        label: Post lijst
+        label: Posts overzicht
         type: file
         path: src/content/post-list.md
         fields:
@@ -135,23 +141,27 @@ content:
           fields: [titel, soort, created_at]
         fields:
           - name: titel
+            label: Titel
             type: string
             required: true
           - name: soort
+            label: Soort
             type: select
             required: true
             options:
               values: [Evenement, Lezing, Overig]
           - name: created_at
-            label: gemaakt op
+            label: Gemaakt op
             type: date
             required: true
           - name: cover_image
-            label: cover afbeelding
+            label: Omslagafbeelding
             type: image
             required: true
             description: De afbeelding die bovenaan de post te zien is
           - name: galarij
+            label: Galarij
+            description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
             type: image
             required: false
             options:
