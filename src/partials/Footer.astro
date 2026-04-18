@@ -6,7 +6,7 @@ import pageconfig from "../pageconfig.json";
 
 ---
 
-<footer class:list={["p-content", "flex", "flex-col", "gap-content", "w-full", "max-w-page", "m-auto"]}>
+<footer class:list={["p-content", "pb-inner", "flex", "flex-col", "gap-content", "w-full", "max-w-page", "m-auto"]}>
     <div class:list={["flex", "justify-center", "gap-content"]}>
         {pageconfig.socials.map(v => (
             <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
@@ -14,7 +14,7 @@ import pageconfig from "../pageconfig.json";
     </div>
 
     <a href={pageconfig.maillist} class:list={["w-full"]}>
-        <Button onLight={false} useFullRound={true} classes={["text-secundary-on-dark", "px-base", "w-full"]}>
+        <Button onLight={false} useFullRound={true} classes={["text-secundary-on-dark", "px-base", "w-full"]} useBorderOnly={true}>
             Registreer voor de maillijst
         </Button>
     </a>

@@ -97,6 +97,25 @@ content:
             options:
               format: markdown
               media: false
+      - name: upcomming-event
+        label: Komend evenement
+        type: file
+        path: src/content/upcomming-event.md
+        fields:
+          - name: cover_image
+            label: Cover afbeelding
+            type: image
+            required: false
+          - name: signup
+            label: Registratie link
+            type: string
+            required: false
+          - name: body
+            type: rich-text
+            required: true
+            options:
+              format: markdown
+              media: false
       - name: postlist
         label: Post lijst
         type: file

@@ -33,6 +33,7 @@ function toggleOpen() {
             <nav class={["m-auto", "w-page", "max-w-full", "pb-base", "px-content"]}>
                 <ul class={["list-disc", "list-inside", "text-screen"]}>
                     <li><a href={pageconfig.sitelocatie + "post/"}>Posts</a></li>
+                    <li><a href={pageconfig.sitelocatie + "upcomming-event"}>Komend evenement</a></li>
                     <li><a href={pageconfig.sitelocatie + "faq"}>FAQ</a></li>
                 </ul>
             </nav>

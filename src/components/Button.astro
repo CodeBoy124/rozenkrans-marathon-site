@@ -13,7 +13,7 @@ const {onLight, useFlatLeft = false, useFullRound = false, classes = [], useBord
 ---
 
 {(useBorderOnly) ? (
-    <button class:list={clsList("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
-) : (
     <button class:list={clsList("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "inset-shadow-sm/25", "p-inner", "border", "border-solid", (onLight ? "border-secundary-on-light" : "border-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
+) : (
+    <button class:list={clsList("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
 )}
