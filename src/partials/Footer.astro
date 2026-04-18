@@ -1,5 +1,5 @@
 ---
-import MaillistSubscribe from "../components/MaillistSubscribe.svelte";
+import Button from "../components/Button.astro";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import pageconfig from "../pageconfig.json";
 
@@ -14,5 +14,10 @@ import pageconfig from "../pageconfig.json";
             <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
         ))}
     </div>
-    <MaillistSubscribe client:load />
+
+    <a href={pageconfig.maillist} class:list={["w-full"]}>
+        <Button onLight={false} useFullRound={true} classes={["text-secundary-on-dark", "px-base", "w-full"]}>
+            Registreer voor de maillijst
+        </Button>
+    </a>
 </footer>

@@ -18,6 +18,11 @@ content:
         type: string
         required: true
         description: De basis URL waar de website op staat
+      - name: maillist
+        label: Maillijst form
+        type: string
+        required: true
+        description: De link naar bijv. Google Forms waarmee mensen zich kunnen aanmelden voor de maillijst
       - name: socials
         type: object
         list:
