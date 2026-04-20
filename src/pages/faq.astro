@@ -1,15 +1,23 @@
 ---
 import pageconfig from "../pageconfig.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FaqResponseAnswer from "../components/FaqResponseAnswer.astro";
 import * as faq_md from "../content/faq.md";
 ---
 
 <BaseLayout title={pageconfig.sitetitel + " | FAQ"}>
+    <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={faq_md.compiledContent()}></article>
     <div class="flex flex-col gap-content">
         {faq_md.frontmatter.items.map((item: {vraag: string, antwoord: string}, id: number) => (
-            <FaqResponseAnswer question={item.vraag} answer={item.antwoord} key={id.toString()} />
+            <button collapse-src={"faq-"+id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
+                <div class="flex justify-between font-semibold">
+                    <span class="text-lg">{item.vraag}</span>
+
+                    <span collapse-target={"faq-"+id}>+</span>
+                    <span collapse-target={"faq-"+id} class="hidden">-</span>
+                </div>
+                <p collapse-target={"faq-"+id} class="hidden text-left">{item.antwoord}</p>
+            </button>
         ))}
     </div>
 </BaseLayout>

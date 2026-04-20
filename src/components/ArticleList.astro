@@ -1,6 +1,6 @@
 ---
 import { type CollectionEntry } from 'astro:content'
-import ArticleCard from './ArticleCard.astro';
+import BaseImage from "./BaseImage.astro"
 import pageconfig from "../pageconfig.json";
 import type { HTMLAttributes } from 'astro/types';
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
@@ -19,7 +19,19 @@ const {title, articles, $class, ...extras} = Astro.props;
     <ul class="flex flex-col gap-content">
         {articles.map(article => (
             <li>
-                <ArticleCard href={pageconfig.sitelocatie + "post/" + article.id} title={article.data.titel} src={article.data.cover_image} date={article.data.created_at} tag={article.data.soort} />
+                <div class="w-full bg-white rounded-base shadow-md/25">
+                    <a href={pageconfig.sitelocatie + "post/" + article.id}>
+                    <BaseImage src={article.data.cover_image} alt={article.data.titel} variant="noshadow" $class="aspect-video" />
+                    <div class="p-inner flex flex-col gap-0 justify-center items-center">
+                        <span class="font-semibold">{title}</span>
+                        <p>
+                            <span class="italic">{article.data.created_at.toLocaleDateString()}</span>
+                            -
+                            <span>{article.data.soort}</span>
+                        </p>
+                    </div>
+                    </a>
+                </div>
             </li>
         ))}
     </ul>

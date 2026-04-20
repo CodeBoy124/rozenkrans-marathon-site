@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css"
-import Header from '../partials/Header.astro';
-import Footer from '../partials/Footer.astro';
+import logo from "../assets/rmw-icon-transparent.png";
+import Button from "../components/Button.astro";
+import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import pageconfig from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
 
@@ -11,7 +12,6 @@ interface Props {
 }
 
 const {title, $class} = Astro.props;
-
 ---
 
 <html lang="en">
@@ -22,15 +22,63 @@ const {title, $class} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
         <slot name="head" />
+        <script src="../scripts/collapsable.ts"></script>
 	</head>
 	<body class={twMerge("bg-primary flex flex-col", $class)}>
-        <Header />
+        <!-- Topbar -->
+        <div class="bg-primary sticky top-0 z-50 shadow-sm/25">
+            <header class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto">
+                <div class="flex justify-between items-center text-white">
+                    <a href={pageconfig.sitelocatie} class="flex items-center gap-inner">
+                        <img src={logo.src} alt="Rozenkrans marathon logo" class="h-12.5" />
+                        <h1>Rozenkrans<br />Marathon</h1>
+                    </a>
+                    <button aria-label="toggle navbar" collapse-src="header">
+                        <!-- ic:baseline-menu -->
+                        <svg collapse-target="header" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></svg>
+
+                        <!-- ic:baseline-close -->
+                        <svg collapse-target="header" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></svg>
+                    </button>
+                </div>
+            </header>
+            <nav collapse-target="header" class="hidden absolute left-0 top-full w-full">
+                <div class="bg-primary w-full">
+                    <div class="m-auto w-page max-w-full pb-base px-content">
+                        <ul class="list-disc list-inside text-screen">
+                            <li><a href={pageconfig.sitelocatie + "post/"}>Posts</a></li>
+                            <li><a href={pageconfig.sitelocatie + "upcomming-event"}>Komend evenement</a></li>
+                            <li><a href={pageconfig.sitelocatie + "faq"}>FAQ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button collapse-src="header" class="bg-black opacity-50 h-screen w-full" aria-label="Sluit menu"></button>
+            </nav>
+        </div>
+        
+        <!-- Main -->
         <main class="bg-screen">
             <div class="w-full max-w-page m-auto flex flex-col gap-content p-content">
                 <slot />
             </div>
         </main>
-        <Footer />
+
+        <!-- Footer -->
+        <footer class="p-content pb-inner flex flex-col gap-content w-full max-w-page m-auto">
+            <div class="flex justify-center gap-content">
+                {pageconfig.socials.map(v => (
+                    <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
+                ))}
+            </div>
+
+            <a href={pageconfig.maillist} class="w-full">
+                <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full">
+                    Registreer voor de maillijst
+                </Button>
+            </a>
+
+            <a href="https://icon-sets.iconify.design/ic/" class="text-white italic text-center text-sm opacity-65">(Credits) Iconen gebruikt van Google</a>
+        </footer>
 	</body>
 </html>
 
