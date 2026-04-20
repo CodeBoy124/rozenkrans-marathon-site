@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import {clsList} from "../util/classes";
+import clsx from "clsx";
 
 interface Props {
     src: ImageMetadata|string;
@@ -15,8 +15,8 @@ const {src, alt, classes = [], showShadow = true, loading = null} = Astro.props;
 ---
 
 {(typeof(src) == "string") ? (
-    <img src={src} alt={alt} loading={loading} class:list={clsList("w-full", "object-cover", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+    <img src={src} alt={alt} loading={loading} class:list={clsx("w-full", "object-cover", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
 ) : (
-    <Image src={src} alt={alt} loading={loading} class:list={clsList("w-full", "object-cover", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
+    <Image src={src} alt={alt} loading={loading} class:list={clsx("w-full", "object-cover", "rounded-base", (showShadow ? "shadow-md/25" : null), ...classes)}/>
 )}
 
