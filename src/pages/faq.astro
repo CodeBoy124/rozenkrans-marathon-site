@@ -1,8 +1,7 @@
 ---
 import pageconfig from "../pageconfig.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import FaqResponseAnswer from "../components/FaqResponseAnswer.svelte";
-import SeparationBar from "../components/SeparationBar.astro";
+import FaqResponseAnswer from "../components/FaqResponseAnswer.astro";
 import * as faq_md from "../content/faq.md";
 ---
 
@@ -11,8 +10,8 @@ import * as faq_md from "../content/faq.md";
 		<Fragment set:html={faq_md.compiledContent()} />
 	</article>
     <div class:list={["flex", "flex-col", "gap-content"]}>
-        {faq_md.frontmatter.items.map((item: {vraag: string, antwoord: string}) => (
-            <FaqResponseAnswer question={item.vraag} answer={item.antwoord} client:load />
+        {faq_md.frontmatter.items.map((item: {vraag: string, antwoord: string}, id: number) => (
+            <FaqResponseAnswer question={item.vraag} answer={item.antwoord} key={id.toString()} />
         ))}
     </div>
 </BaseLayout>

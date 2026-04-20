@@ -1,0 +1,21 @@
+---
+interface Props {
+    question: string;
+    answer: string;
+    key: string;
+}
+
+let {question, answer, key} = Astro.props;
+
+const collapse_id = "faq-"+key;
+---
+
+<button collapse-src={collapse_id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
+    <div class="flex justify-between font-semibold">
+        <span class="text-lg">{question}</span>
+
+        <span collapse-target={collapse_id}>+</span>
+        <span collapse-target={collapse_id} class="hidden">-</span>
+    </div>
+    <p collapse-target={collapse_id} class="hidden text-left">{answer}</p>
+</button>

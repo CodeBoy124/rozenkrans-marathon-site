@@ -12,7 +12,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/svelte": "^8.0.5",
     "@iconify-json/ic": "^1.2.4",
     "@tailwindcss/typography": "^0.5.19",
     "@tailwindcss/vite": "^4.2.2",
@@ -20,7 +19,6 @@
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "firebase": "^12.12.0",
-    "svelte": "^5.55.4",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3"
