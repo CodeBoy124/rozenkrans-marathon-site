@@ -23,8 +23,8 @@ const {Content} = await render(post);
 ---
 
 <BaseLayout title={pageconfig.sitetitel + " | " + post.data.titel}>
-    <div class:list={["flex", "flex-col", "gap-inner", "text-center"]}>
-        <h1 class:list={["text-3xl", "font-semibold"]}>{post.data.titel}</h1>
+    <div class="flex flex-col gap-inner text-center">
+        <h1 class="text-3xl font-semibold">{post.data.titel}</h1>
         <p>
             <span><i>{post.data.created_at.toLocaleDateString()}</i></span>
             -
@@ -37,8 +37,8 @@ const {Content} = await render(post);
     </article>
     {(post.data.galarij) && (
         <SeparationBar />
-        <div class:list={["flex", "flex-col", "gap-content"]}>
-            <h2 class:list={["text-center", "text-2xl", "font-semibold"]}>Galarij</h2>
+        <div class="flex flex-col gap-content">
+            <h2 class="text-center text-2xl font-semibold">Galarij</h2>
             {post.data.galarij.map((src, index) => (
                 <BaseImage src={src} alt={`Galarij afbeelding ${index}`} />
             ))}

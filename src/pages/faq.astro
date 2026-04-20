@@ -9,7 +9,7 @@ import * as faq_md from "../content/faq.md";
     <article class="prose text-center max-w-none">
 		<Fragment set:html={faq_md.compiledContent()} />
 	</article>
-    <div class:list={["flex", "flex-col", "gap-content"]}>
+    <div class="flex flex-col gap-content">
         {faq_md.frontmatter.items.map((item: {vraag: string, antwoord: string}, id: number) => (
             <FaqResponseAnswer question={item.vraag} answer={item.antwoord} key={id.toString()} />
         ))}

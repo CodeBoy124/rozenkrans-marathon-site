@@ -2,18 +2,21 @@
 import { type CollectionEntry } from 'astro:content'
 import ArticleCard from './ArticleCard.astro';
 import pageconfig from "../pageconfig.json";
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge, type ClassNameValue } from 'tailwind-merge';
 
-interface Props {
+interface Props extends HTMLAttributes<"div"> {
     title: string;
     articles: CollectionEntry<'posts'>[]
+    $class?: ClassNameValue
 }
 
-const {title, articles} = Astro.props;
+const {title, articles, $class, ...extras} = Astro.props;
 ---
 
-<div class:list={["flex", "flex-col", "gap-content", "items-center"]}>
-    <h2 class:list={["text-2xl", "font-semibold"]}>{title}</h2>
-    <ul class:list={["flex", "flex-col", "gap-content"]}>
+<div class={twMerge("flex flex-col gap-content items-center", $class)} {...extras}>
+    <h2 class="text-2xl font-semibold">{title}</h2>
+    <ul class="flex flex-col gap-content">
         {articles.map(article => (
             <li>
                 <ArticleCard href={pageconfig.sitelocatie + "post/" + article.id} title={article.data.titel} src={article.data.cover_image} date={article.data.created_at} tag={article.data.soort} />

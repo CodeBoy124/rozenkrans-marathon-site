@@ -3,10 +3,14 @@ import type { HTMLAttributes } from 'astro/types';
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
 
 interface Props extends HTMLAttributes<"div"> {
+    name: string;
     $class?: ClassNameValue;
 }
 
-const {$class, ...extras} = Astro.props;
+const {name, $class, ...extras} = Astro.props;
+
 ---
 
-<div class={twMerge("w-full h-px bg-secundary-on-light", $class)} {...extras}></div>
+<div class={twMerge("text-red-500", $class)} {...extras}>
+    {name}
+</div>

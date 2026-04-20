@@ -1,16 +1,20 @@
 ---
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge, type ClassNameValue } from "tailwind-merge";
+
+interface Props extends HTMLAttributes<"button"> {
     question: string;
     answer: string;
     key: string;
+    $class?: ClassNameValue
 }
 
-let {question, answer, key} = Astro.props;
+let {question, answer, key, $class, ...extras} = Astro.props;
 
 const collapse_id = "faq-"+key;
 ---
 
-<button collapse-src={collapse_id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
+<button collapse-src={collapse_id} class={twMerge("border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner", $class)} {...extras}>
     <div class="flex justify-between font-semibold">
         <span class="text-lg">{question}</span>
 

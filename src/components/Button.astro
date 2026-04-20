@@ -1,19 +1,20 @@
 ---
-import clsx from 'clsx';
+import type { HTMLAttributes } from 'astro/types';
+import { twMerge, type ClassNameValue } from "tailwind-merge";
 
-interface Props {
+interface Props extends HTMLAttributes<"button"> {
     onLight: boolean;
     useFlatLeft?: boolean;
     useFullRound?: boolean;
-    classes?: string[];
     useBorderOnly?: boolean;
+    $class?: ClassNameValue;
 }
 
-const {onLight, useFlatLeft = false, useFullRound = false, classes = [], useBorderOnly = false} = Astro.props;
+const {onLight, useFlatLeft = false, useFullRound = false, useBorderOnly = false, $class, ...extras} = Astro.props;
 ---
 
 {(useBorderOnly) ? (
-    <button class:list={clsx("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "inset-shadow-sm/25", "p-inner", "border", "border-solid", (onLight ? "border-secundary-on-light" : "border-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
+    <button class={twMerge("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25 inset-shadow-sm/25 p-inner border border-solid", (onLight ? "border-secundary-on-light" : "border-secundary-on-dark"), useFlatLeft && "rounded-l-none", "active:opacity-75", $class)} {...extras}><slot /></button>
 ) : (
-    <button class:list={clsx("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25", "p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft ? "rounded-l-none" : null, "active:opacity-75", ...classes)}><slot /></button>
+    <button class={twMerge("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25 p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft && "rounded-l-none", "active:opacity-75", $class)} {...extras}><slot /></button>
 )}

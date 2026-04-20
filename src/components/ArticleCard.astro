@@ -1,25 +1,27 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 import BaseImage from "./BaseImage.astro"
+import {twMerge, type ClassNameValue} from 'tailwind-merge';
 
-interface Props {
+interface Props extends HTMLAttributes<"div"> {
     href: string;
     src: ImageMetadata|string;
     title: string;
     date: Date;
     tag: string;
-    classes?: string[];
+    $class?: ClassNameValue;
 }
 
-const {href, src, title, date, tag, classes = []} = Astro.props;
+const {href, src, title, date, tag, $class, ...extras} = Astro.props;
 ---
 
-<div class:list={["w-full", "bg-white", "rounded-base", "shadow-md/25", ...classes]}>
+<div class={twMerge("w-full bg-white rounded-base shadow-md/25", $class)} {...extras}>
     <a href={href}>
-    <BaseImage src={src} alt={title} showShadow={false} classes={["aspect-video"]} />
-    <div class:list={["p-inner", "flex", "flex-col", "gap-0", "justify-center", "items-center"]}>
-        <span class:list={["font-semibold"]}>{title}</span>
+    <BaseImage src={src} alt={title} showShadow={false} $class="aspect-video" />
+    <div class="p-inner flex flex-col gap-0 justify-center items-center">
+        <span class="font-semibold">{title}</span>
         <p>
-            <span class:list={["italic"]}>{date.toLocaleDateString()}</span>
+            <span class="italic">{date.toLocaleDateString()}</span>
             -
             <span>{tag}</span>
         </p>
