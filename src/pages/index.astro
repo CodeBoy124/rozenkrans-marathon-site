@@ -15,9 +15,7 @@ const featuredPosts = postList.slice(0, 2);
 
 <BaseLayout title={pageconfig.sitetitel}>
 	<BaseImage src={homePageText.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
-	<article class="prose text-center max-w-none">
-		<Fragment set:html={homePageText.compiledContent()} />
-	</article>
+	<article class="prose text-center max-w-none" set:html={homePageText.compiledContent()}></article>
 	<SeparationBar />
 	<ArticleList title="Recente posts" articles={featuredPosts} />
 </BaseLayout>

@@ -1,19 +1,15 @@
 ---
-
 import pageconfig from "../pageconfig.json";
 import * as upcomming_event_md from "../content/upcomming-event.md";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
 import Button from "../components/Button.astro";
-
 ---
 
 <BaseLayout title={pageconfig.sitetitel + "| Komend evenement"}>
     <BaseImage src={upcomming_event_md.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
-	<article class="prose text-center max-w-none">
-		<Fragment set:html={upcomming_event_md.compiledContent()} />
-	</article>
+	<article class="prose text-center max-w-none" set:html={upcomming_event_md.compiledContent()}></article>
     <a href={upcomming_event_md.frontmatter.signup}>
-        <Button onLight={true} useFullRound={true} $class="w-full">Meld je aan!</Button>
+        <Button variant="light_fill" $class="w-full">Meld je aan!</Button>
     </a>
 </BaseLayout>

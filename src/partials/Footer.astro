@@ -2,8 +2,6 @@
 import Button from "../components/Button.astro";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import pageconfig from "../pageconfig.json";
-
-
 ---
 
 <footer class="p-content pb-inner flex flex-col gap-content w-full max-w-page m-auto">
@@ -14,7 +12,7 @@ import pageconfig from "../pageconfig.json";
     </div>
 
     <a href={pageconfig.maillist} class="w-full">
-        <Button onLight={false} useFullRound={true} $class="text-secundary-on-dark px-base w-full" useBorderOnly={true}>
+        <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full">
             Registreer voor de maillijst
         </Button>
     </a>

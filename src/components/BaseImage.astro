@@ -2,21 +2,26 @@
 import { Image } from "astro:assets";
 import { twMerge, type ClassNameValue } from "tailwind-merge";
 
+const variant_styles = {
+    noshadow: null,
+    shadow: "shadow-md/25"
+}
+
 interface Props {
+    variant?: 'noshadow' | 'shadow'
     src: ImageMetadata|string;
     alt: string;
-    showShadow?: boolean;
     loading?: "eager"|"lazy";
     $class?: ClassNameValue;
 }
 
-const {src, alt, showShadow = true, loading = null, $class} = Astro.props;
+const {variant = 'shadow', src, alt, loading = null, $class} = Astro.props;
 
 ---
 
 {(typeof(src) == "string") ? (
-    <img src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", showShadow && "shadow-md/25", $class)}/>
+    <img src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
 ) : (
-    <Image src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", showShadow && "shadow-md/25", $class)}/>
+    <Image src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
 )}
 

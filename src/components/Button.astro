@@ -2,19 +2,19 @@
 import type { HTMLAttributes } from 'astro/types';
 import { twMerge, type ClassNameValue } from "tailwind-merge";
 
+const variant_styles = {
+    light_fill: "bg-secundary-on-light",
+    dark_line: "border-secundary-on-dark inset-shadow-sm/25 border border-solid"
+};
+
 interface Props extends HTMLAttributes<"button"> {
-    onLight: boolean;
-    useFlatLeft?: boolean;
-    useFullRound?: boolean;
-    useBorderOnly?: boolean;
+    variant: 'light_fill' | 'dark_line';
     $class?: ClassNameValue;
 }
 
-const {onLight, useFlatLeft = false, useFullRound = false, useBorderOnly = false, $class, ...extras} = Astro.props;
+const {variant, $class, ...extras} = Astro.props;
 ---
 
-{(useBorderOnly) ? (
-    <button class={twMerge("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25 inset-shadow-sm/25 p-inner border border-solid", (onLight ? "border-secundary-on-light" : "border-secundary-on-dark"), useFlatLeft && "rounded-l-none", "active:opacity-75", $class)} {...extras}><slot /></button>
-) : (
-    <button class={twMerge("cursor-pointer", useFullRound ? "rounded-full" : "rounded-base", "shadow-sm/25 p-inner", (onLight ? "bg-secundary-on-light" : "bg-secundary-on-dark"), useFlatLeft && "rounded-l-none", "active:opacity-75", $class)} {...extras}><slot /></button>
-)}
+<button class={twMerge("cursor-pointer rounded-full shadow-sm/25 p-inner active:opacity-75", variant_styles[variant], $class)} {...extras}>
+    <slot />
+</button>
