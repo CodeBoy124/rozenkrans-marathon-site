@@ -17,5 +17,24 @@
       "maillist_register": "Registreer voor de maillijst",
       "google_icon_credits": "(Credits) Iconen gebruikt van Google"
     }
+  },
+  "pagePostSingle": {
+    "galary": "Galarij",
+    "galary_image": "Galarij afbeelding"
+  },
+  "pagePostList": {
+    "title": "Alle posts"
+  },
+  "pageFaq": {
+    "title": "Vaakgestelde vragen"
+  },
+  "pageStart": {
+    "cover_image": "Dominicaanse priester met Rozenkrans in zijn handen",
+    "recent_posts": "Recente posts"
+  },
+  "pageUpcommingEvent": {
+    "title": "Komend evenement",
+    "cover_image": "Dominicaanse priester met Rozenkrans in zijn handen",
+    "signup": "Meld je aan!"
   }
 }

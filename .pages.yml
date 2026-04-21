@@ -8,10 +8,6 @@ content:
     type: file
     path: src/pageconfig.json
     fields:
-      - name: site_title
-        label: Site titel
-        type: string
-        required: true
       - name: site_url
         label: Site URL
         type: string

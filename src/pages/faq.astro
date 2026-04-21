@@ -1,14 +1,13 @@
 ---
-import PAGECONFIG_JSON from "../pageconfig.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import * as FAQ_MD from "../content/faq.md";
-import { ConfigSchema, FaqPageSchema } from "../content.config";
+import { FaqPageSchema } from "../content.config";
+import { i18n } from "../translations/i18n";
 
 const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
-const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 ---
 
-<BaseLayout title={pageconfig.site_title + " | FAQ"}>
+<BaseLayout title={i18n().pageFaq.title}>
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
     <div class="flex flex-col gap-content">

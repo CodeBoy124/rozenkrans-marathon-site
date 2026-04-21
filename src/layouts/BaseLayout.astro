@@ -11,7 +11,7 @@ import { i18n } from "../translations/i18n";
 const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
 interface Props {
-    title: string;
+    title?: string;
     $class?: ClassNameValue;
 }
 
@@ -24,7 +24,9 @@ const {title, $class} = Astro.props;
         <link rel="icon" href={pageconfig.site_url + "favicon.ico"} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{i18n().BaseLayout.head.title} | {title}</title>
+		<title>
+            {i18n().BaseLayout.head.title}{title && ` | ${title}`}
+        </title>
         <slot name="head" />
         <script src="../scripts/collapsable.ts"></script>
 	</head>

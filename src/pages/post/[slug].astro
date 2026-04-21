@@ -1,13 +1,10 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
-import PAGECONFIG_JSON from "../../pageconfig.json";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BaseImage from "../../components/BaseImage.astro";
 import SeparationBar from "../../components/SeparationBar.astro";
-import {ConfigSchema} from "../../content.config";
-
-const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
+import { i18n } from "../../translations/i18n";
 
 export const getStaticPaths = (async () => {
     const posts = await getCollection('posts');
@@ -25,7 +22,7 @@ const {post} = Astro.props;
 const {Content} = await render(post);
 ---
 
-<BaseLayout title={pageconfig.site_title + " | " + post.data.title}>
+<BaseLayout title={post.data.title}>
     <div class="flex flex-col gap-inner text-center">
         <h1 class="text-3xl font-semibold">{post.data.title}</h1>
         <p>
@@ -41,9 +38,9 @@ const {Content} = await render(post);
     {(post.data.galary) && (
         <SeparationBar />
         <div class="flex flex-col gap-content">
-            <h2 class="text-center text-2xl font-semibold">Galarij</h2>
+            <h2 class="text-center text-2xl font-semibold">{i18n().pagePostSingle.galary}</h2>
             {post.data.galary.map((src, index) => (
-                <BaseImage src={src} alt={`Galarij afbeelding ${index}`} />
+                <BaseImage src={src} alt={i18n().pagePostSingle.galary_image + ' ' + index} />
             ))}
         </div>
     )}

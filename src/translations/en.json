@@ -17,5 +17,24 @@
       "maillist_register": "Register for maillist",
       "google_icon_credits": "(Credits) Icons used from Google"
     }
+  },
+  "pagePostSingle": {
+    "galary": "Galary",
+    "galary_image": "Galary image"
+  },
+  "pagePostList": {
+    "title": "All posts"
+  },
+  "pageFaq": {
+    "title": "Frequently asked questions"
+  },
+  "pageStart": {
+    "cover_image": "Dominican priest with a Rosary in his hands",
+    "recent_posts": "Recent posts"
+  },
+  "pageUpcommingEvent": {
+    "title": "Upcomming event",
+    "cover_image": "Dominican priest with a Rosary in his hands",
+    "signup": "Signup now!"
   }
 }

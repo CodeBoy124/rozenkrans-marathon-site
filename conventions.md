@@ -9,3 +9,5 @@ variables: this_case
 functions: thisCase
 types (not Props): ThisCase_t
 validate imported JSON/MD with Zod
+
+TODO: Apply alts correctly, specifically with dominican priest image
