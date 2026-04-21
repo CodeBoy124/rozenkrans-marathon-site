@@ -1,9 +1,10 @@
 ---
-titel: Sit quos in pulchraque
-soort: Lezing
+title: Sit quos in pulchraque
+kind: Lezing
 created_at: 2026-04-16
 cover_image: /600e9f59166b4a0591ad427cc66e9ed2.webp
 ---
+
 **Lorem** markdownum accepit regnumque perdant; nec copia aequora locum. Matrem
 Cecropis durum necis dicere Athamanta quibus iuro exemit post
 `smishing_source_pc` non cecidit facit `ssd`.
@@ -50,6 +51,6 @@ Suas adhuc si culpa ferre dabitis, grave esse! Fixa dextrae tibi.
 
 ## Potest mediamque quod
 
-Inhaeret tenebrae, homines harenas terque. In enim tenet, tot pars *amentis*.
+Inhaeret tenebrae, homines harenas terque. In enim tenet, tot pars _amentis_.
 Neque crescit cumque et audaci et concipit nec quae, adfectasse. Erat in eiusdem
-illic, paulatim visa ante, *placandam* capillos claudit.
+illic, paulatim visa ante, _placandam_ capillos claudit.

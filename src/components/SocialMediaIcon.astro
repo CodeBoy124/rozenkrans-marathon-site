@@ -2,26 +2,26 @@
 import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
-import {jssToInlineCss, type JssSheet} from "../util/jss";
+import {jssToInlineCss, type JssSheet_t} from "../util/jss";
 
 interface Props extends HTMLAttributes<"a"> {
     href: string;
-    iconId: string;
-    voorgrond?: string;
+    icon_id: string;
+    foreground?: string;
     background?: string;
     $class?: ClassNameValue
 }
 
-const {href, iconId, voorgrond, background, $class, ...extras} = Astro.props;
+const {href, icon_id, foreground, background, $class, ...extras} = Astro.props;
 
-const dynamic_style: JssSheet = {
+const dynamic_style: JssSheet_t = {
     background: background ?? null,
-    color: voorgrond ?? null
+    color: foreground ?? null
 };
 ---
 
 <a href={href} class={twMerge($class)} {...extras}>
     <div style={jssToInlineCss(dynamic_style)} class="shadow-sm/25 w-12 h-12 flex justify-center items-center rounded-full">
-        <Icon name={iconId} size={38} />
+        <Icon name={icon_id} size={38} />
     </div>
 </a>

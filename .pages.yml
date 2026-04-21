@@ -8,15 +8,15 @@ content:
     type: file
     path: src/pageconfig.json
     fields:
-      - name: sitetitel
+      - name: site_title
         label: Site titel
         type: string
         required: true
-      - name: sitelocatie
+      - name: site_url
         label: Site URL
         type: string
         required: true
-      - name: maillist
+      - name: maillist_url
         label: Maillijst link
         type: string
         required: true
@@ -28,15 +28,15 @@ content:
           min: 1
           collapsible:
             collapsed: true
-            summary: "{titel}"
+            summary: "{title}"
         fields:
-          - name: titel
+          - name: title
             label: Identificatie label
             type: string
             required: false
             description: Dit komt niet op de echte website, maar wordt alleen op dit systeem gebruikt
-          - name: link
-            label: Link naar account
+          - name: url
+            label: URL van account
             type: string
             required: true
           - name: icon
@@ -44,12 +44,12 @@ content:
             type: string
             required: true
             description: Zoek op "https://icon-sets.iconify.design/ic/" naar een icoontje en plak de "Icon name" hier
-          - name: voorgrond
+          - name: foreground
             label: Voorgrond kleur/stijl
             type: string
             required: false
             description: De voorgrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#000000 neer te zetten, maar gradients zijn ook mogelijk (via CSS)
-          - name: achtergrond
+          - name: background
             label: Achtergrond kleur/stijl
             type: string
             required: true
@@ -88,11 +88,11 @@ content:
                 collapsed: true
                 summary: "{vraag}"
             fields:
-              - name: vraag
+              - name: question
                 label: Vraag
                 type: string
                 required: true
-              - name: antwoord
+              - name: answer
                 label: Antwoord
                 type: text
                 required: true
@@ -111,8 +111,8 @@ content:
             label: Omslagafbeelding
             type: image
             required: false
-          - name: signup
-            label: Registratie link
+          - name: signup_url
+            label: URL voor Registratie
             description: Bijvoorbeeld voor Google Forms
             type: string
             required: false
@@ -138,13 +138,13 @@ content:
         type: collection
         path: src/content/posts
         view:
-          fields: [titel, soort, created_at]
+          fields: [title, kind, created_at]
         fields:
-          - name: titel
+          - name: title
             label: Titel
             type: string
             required: true
-          - name: soort
+          - name: kind
             label: Soort
             type: select
             required: true
@@ -159,7 +159,7 @@ content:
             type: image
             required: true
             description: De afbeelding die bovenaan de post te zien is
-          - name: galarij
+          - name: galary
             label: Galarij
             description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
             type: image

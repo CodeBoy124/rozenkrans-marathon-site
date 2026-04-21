@@ -1,15 +1,15 @@
-const target_attribute = "collapse-target";
-const src_attribute = "collapse-src";
+const TARGET_ATTRIBUTE = "collapse-target";
+const SRC_ATTRIBUTE = "collapse-src";
 
-let sources = document.querySelectorAll(`[${src_attribute}]`).values();
+let sources = document.querySelectorAll(`[${SRC_ATTRIBUTE}]`).values();
 
 for (let source of sources) {
-  let name = source.getAttribute(src_attribute) ?? "default";
+  let name = source.getAttribute(SRC_ATTRIBUTE) ?? "default";
   source.addEventListener("click", () => {
     const targets = document
-      .querySelectorAll(`[${target_attribute}]`)
+      .querySelectorAll(`[${TARGET_ATTRIBUTE}]`)
       .values()
-      .filter((el) => (el.getAttribute(target_attribute) ?? "default") == name);
+      .filter((el) => (el.getAttribute(TARGET_ATTRIBUTE) ?? "default") == name);
     targets.forEach((target) => target.classList.toggle("hidden"));
   });
 }

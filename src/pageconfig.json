@@ -1,19 +1,19 @@
 {
-  "sitetitel": "Rozenkrans Marathon",
-  "sitelocatie": "http://192.168.178.50:3000/",
-  "maillist": "https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts",
+  "site_title": "Rozenkrans Marathon",
+  "site_url": "http://192.168.178.50:3000/",
+  "maillist_url": "https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts",
   "socials": [
     {
-      "titel": "Instagram",
-      "link": "https://www.instagram.com/rozenkransmarathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+      "title": "Instagram",
+      "url": "https://www.instagram.com/rozenkransmarathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
       "icon": "ic:outline-photo-camera",
-      "achtergrond": "linear-gradient(0deg,rgba(255, 208, 0, 1) 0%, rgba(242, 78, 53, 1) 50%, rgba(219, 76, 224, 1) 100%)"
+      "background": "linear-gradient(0deg,rgba(255, 208, 0, 1) 0%, rgba(242, 78, 53, 1) 50%, rgba(219, 76, 224, 1) 100%)"
     },
     {
-      "titel": "Email",
-      "link": "mailto:rozenkransmarathon@gmail.com",
+      "title": "Email",
+      "url": "mailto:rozenkransmarathon@gmail.com",
       "icon": "ic:outline-email",
-      "achtergrond": "#1c69ad"
+      "background": "#1c69ad"
     }
   ]
 }

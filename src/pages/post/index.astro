@@ -3,15 +3,15 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeparationBar from "../../components/SeparationBar.astro";
 import ArticleList from "../../components/ArticleList.astro";
-import pageconfig from "../../pageconfig.json";
-import * as postlist_md from "../../content/post-list.md";
+import PAGECONFIG_JSON from "../../pageconfig.json";
+import * as POSTLIST_MD from "../../content/post-list.md";
 
-const postList = await getCollection('posts');
-postList.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
+const post_list = await getCollection('posts');
+post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
 ---
 
-<BaseLayout title={pageconfig.sitetitel + " | Alle posts"}>
-    <article class="prose text-center max-w-none" set:html={postlist_md.compiledContent()}></article>
+<BaseLayout title={PAGECONFIG_JSON.site_title + " | Alle posts"}>
+    <article class="prose text-center max-w-none" set:html={POSTLIST_MD.compiledContent()}></article>
 	<SeparationBar />
-    <ArticleList title="Alle posts" articles={postList} />
+    <ArticleList title="Alle posts" articles={post_list} />
 </BaseLayout>

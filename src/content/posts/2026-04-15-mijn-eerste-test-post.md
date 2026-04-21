@@ -1,9 +1,9 @@
 ---
-titel: Mijn eerste test post
-soort: Overig
+title: Mijn eerste test post
+kind: Overig
 created_at: 2026-04-15
 cover_image: /pexels-rdne-5875445.jpg
-galarij:
+galary:
   - /st-peter-basilica.010.jpg
   - /Bob-Ross-Mountain-Summit.jpg
 ---

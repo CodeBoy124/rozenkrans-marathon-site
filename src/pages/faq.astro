@@ -1,22 +1,22 @@
 ---
-import pageconfig from "../pageconfig.json";
+import PAGECONFIG_JSON from "../pageconfig.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import * as faq_md from "../content/faq.md";
+import * as FAQ_MD from "../content/faq.md";
 ---
 
-<BaseLayout title={pageconfig.sitetitel + " | FAQ"}>
+<BaseLayout title={PAGECONFIG_JSON.site_title + " | FAQ"}>
     <script src="../scripts/collapsable.ts"></script>
-    <article class="prose text-center max-w-none" set:html={faq_md.compiledContent()}></article>
+    <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
     <div class="flex flex-col gap-content">
-        {faq_md.frontmatter.items.map((item: {vraag: string, antwoord: string}, id: number) => (
+        {FAQ_MD.frontmatter.items.map((item: {question: string, answer: string}, id: number) => (
             <button collapse-src={"faq-"+id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
                 <div class="flex justify-between font-semibold">
-                    <span class="text-lg">{item.vraag}</span>
+                    <span class="text-lg">{item.question}</span>
 
                     <span collapse-target={"faq-"+id}>+</span>
                     <span collapse-target={"faq-"+id} class="hidden">-</span>
                 </div>
-                <p collapse-target={"faq-"+id} class="hidden text-left">{item.antwoord}</p>
+                <p collapse-target={"faq-"+id} class="hidden text-left">{item.answer}</p>
             </button>
         ))}
     </div>

@@ -1,9 +1,9 @@
 ---
 import "../styles/global.css"
-import logo from "../assets/rmw-icon-transparent.png";
+import LOGO_PNG from "../assets/rmw-icon-transparent.png";
 import Button from "../components/Button.astro";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
-import pageconfig from "../pageconfig.json";
+import PAGECONFIG_JSON from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
 
 interface Props {
@@ -17,7 +17,7 @@ const {title, $class} = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-        <link rel="icon" href={pageconfig.sitelocatie + "favicon.ico"} />
+        <link rel="icon" href={PAGECONFIG_JSON.site_url + "favicon.ico"} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
@@ -29,8 +29,8 @@ const {title, $class} = Astro.props;
         <div class="bg-primary sticky top-0 z-50 shadow-sm/25">
             <header class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto">
                 <div class="flex justify-between items-center text-white">
-                    <a href={pageconfig.sitelocatie} class="flex items-center gap-inner">
-                        <img src={logo.src} alt="Rozenkrans marathon logo" class="h-12.5" />
+                    <a href={PAGECONFIG_JSON.site_url} class="flex items-center gap-inner">
+                        <img src={LOGO_PNG.src} alt="Rozenkrans marathon logo" class="h-12.5" />
                         <h1>Rozenkrans<br />Marathon</h1>
                     </a>
                     <button aria-label="toggle navbar" collapse-src="header">
@@ -46,9 +46,9 @@ const {title, $class} = Astro.props;
                 <div class="bg-primary w-full">
                     <div class="m-auto w-page max-w-full pb-base px-content">
                         <ul class="list-disc list-inside text-screen">
-                            <li><a href={pageconfig.sitelocatie + "post/"}>Posts</a></li>
-                            <li><a href={pageconfig.sitelocatie + "upcomming-event"}>Komend evenement</a></li>
-                            <li><a href={pageconfig.sitelocatie + "faq"}>FAQ</a></li>
+                            <li><a href={PAGECONFIG_JSON.site_url + "post/"}>Posts</a></li>
+                            <li><a href={PAGECONFIG_JSON.site_url + "upcomming-event"}>Komend evenement</a></li>
+                            <li><a href={PAGECONFIG_JSON.site_url + "faq"}>FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,12 +66,12 @@ const {title, $class} = Astro.props;
         <!-- Footer -->
         <footer class="p-content pb-inner flex flex-col gap-content w-full max-w-page m-auto">
             <div class="flex justify-center gap-content">
-                {pageconfig.socials.map(v => (
-                    <SocialMediaIcon iconId={v.icon} href={v.link} background={v.achtergrond} voorgrond={"voorgrond" in v ? v.voorgrond as string : "white"} />
+                {PAGECONFIG_JSON.socials.map(v => (
+                    <SocialMediaIcon icon_id={v.icon} href={v.url} background={v.background} foreground={"foreground" in v ? v.foreground as string : "white"} />
                 ))}
             </div>
 
-            <a href={pageconfig.maillist} class="w-full">
+            <a href={PAGECONFIG_JSON.maillist_url} class="w-full">
                 <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full">
                     Registreer voor de maillijst
                 </Button>

@@ -1,7 +1,7 @@
-export type JssValue = string | null;
-export type JssSheet = { [key: string]: JssValue };
+export type JssValue_t = string | null;
+export type JssSheet_t = { [key: string]: JssValue_t };
 
-export function jssToInlineCss(sheet: JssSheet) {
+export function jssToInlineCss(sheet: JssSheet_t) {
   let txt = "";
   for (let key in sheet) {
     if (sheet[key] == null) continue;

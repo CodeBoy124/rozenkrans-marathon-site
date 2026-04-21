@@ -1,7 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, render, type CollectionEntry } from "astro:content";
-import pageconfig from "../../pageconfig.json";
+import PAGECONFIG_JSON from "../../pageconfig.json";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BaseImage from "../../components/BaseImage.astro";
 import SeparationBar from "../../components/SeparationBar.astro";
@@ -22,24 +22,24 @@ const {post} = Astro.props;
 const {Content} = await render(post);
 ---
 
-<BaseLayout title={pageconfig.sitetitel + " | " + post.data.titel}>
+<BaseLayout title={PAGECONFIG_JSON.site_title + " | " + post.data.title}>
     <div class="flex flex-col gap-inner text-center">
-        <h1 class="text-3xl font-semibold">{post.data.titel}</h1>
+        <h1 class="text-3xl font-semibold">{post.data.title}</h1>
         <p>
             <span><i>{post.data.created_at.toLocaleDateString()}</i></span>
             -
-            <span>{post.data.soort}</span>
+            <span>{post.data.kind}</span>
         </p>
     </div>
-    <BaseImage src={post.data.cover_image} alt={post.data.titel} />
+    <BaseImage src={post.data.cover_image} alt={post.data.title} />
     <article class="prose max-w-none">
         <Content />
     </article>
-    {(post.data.galarij) && (
+    {(post.data.galary) && (
         <SeparationBar />
         <div class="flex flex-col gap-content">
             <h2 class="text-center text-2xl font-semibold">Galarij</h2>
-            {post.data.galarij.map((src, index) => (
+            {post.data.galary.map((src, index) => (
                 <BaseImage src={src} alt={`Galarij afbeelding ${index}`} />
             ))}
         </div>

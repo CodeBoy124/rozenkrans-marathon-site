@@ -1,9 +1,9 @@
 ---
 items:
-  - vraag: Dit is de vraag
-    antwoord: Dit is het antwoord
-  - vraag: Een tweede onderwerp
-    antwoord: Hier is nogmaal te zien wat het resultaat is
+  - question: Dit is de vraag
+    answer: Dit is het antwoord
+  - question: Een tweede onderwerp
+    answer: Hier is nogmaal te zien wat het resultaat is
 ---
 
 # Een FAQ
