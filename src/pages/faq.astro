@@ -2,13 +2,17 @@
 import PAGECONFIG_JSON from "../pageconfig.json";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import * as FAQ_MD from "../content/faq.md";
+import { ConfigSchema, FaqPageSchema } from "../content.config";
+
+const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
+const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 ---
 
-<BaseLayout title={PAGECONFIG_JSON.site_title + " | FAQ"}>
+<BaseLayout title={pageconfig.site_title + " | FAQ"}>
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
     <div class="flex flex-col gap-content">
-        {FAQ_MD.frontmatter.items.map((item: {question: string, answer: string}, id: number) => (
+        {frontmatter.items.map((item, id) => (
             <button collapse-src={"faq-"+id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
                 <div class="flex justify-between font-semibold">
                     <span class="text-lg">{item.question}</span>

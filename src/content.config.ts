@@ -25,7 +25,7 @@ const posts = defineCollection({
   }),
 });
 
-const ConfigSchema = z.object({
+export const ConfigSchema = z.object({
   site_title: z.string(),
   site_url: z.url(),
   maillist_url: z.url(),
@@ -40,11 +40,11 @@ const ConfigSchema = z.object({
   ),
 });
 
-const HomePageSchema = z.object({
+export const HomePageSchema = z.object({
   cover_image: zod_image_path,
 });
 
-const FaqPageSchema = z.object({
+export const FaqPageSchema = z.object({
   items: z.array(
     z.object({
       question: z.string(),
@@ -53,15 +53,9 @@ const FaqPageSchema = z.object({
   ),
 });
 
-const UpcommingEventPageSchema = z.object({
+export const UpcommingEventPageSchema = z.object({
   cover_image: z.optional(zod_image_path),
   signup_url: z.optional(z.url()),
 });
 
 export const collections = { posts };
-export const singles = {
-  ConfigSchema,
-  HomePageSchema,
-  FaqPageSchema,
-  UpcommingEventSchema: UpcommingEventPageSchema,
-};

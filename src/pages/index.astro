@@ -6,6 +6,10 @@ import SeparationBar from "../components/SeparationBar.astro";
 import * as HOME_PAGE_MD from "../content/index.md";
 import { getCollection } from "astro:content";
 import PAGECONFIG_JSON from "../pageconfig.json";
+import {ConfigSchema, HomePageSchema} from "../content.config";
+
+const frontmatter = HomePageSchema.parse(HOME_PAGE_MD.frontmatter);
+const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
 const post_list = await getCollection('posts');
 post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
@@ -13,8 +17,8 @@ const featured_posts = post_list.slice(0, 2);
 
 ---
 
-<BaseLayout title={PAGECONFIG_JSON.site_title}>
-	<BaseImage src={HOME_PAGE_MD.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
+<BaseLayout title={pageconfig.site_title}>
+	<BaseImage src={frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
 	<article class="prose text-center max-w-none" set:html={HOME_PAGE_MD.compiledContent()}></article>
 	<SeparationBar />
 	<ArticleList title="Recente posts" articles={featured_posts} />

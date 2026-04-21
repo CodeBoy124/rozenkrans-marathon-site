@@ -4,12 +4,21 @@ import * as UPCOMMING_EVENT_MD from "../content/upcomming-event.md";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
 import Button from "../components/Button.astro";
+import { ConfigSchema, UpcommingEventPageSchema } from "../content.config";
+
+const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatter);
+const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
+
 ---
 
-<BaseLayout title={PAGECONFIG_JSON.site_title + "| Komend evenement"}>
-    <BaseImage src={UPCOMMING_EVENT_MD.frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
+<BaseLayout title={pageconfig.site_title + "| Komend evenement"}>
+    {frontmatter.cover_image && (
+        <BaseImage src={frontmatter.cover_image} alt="Dominicaanse priester met Rozenkrans in zijn handen" $class="aspect-video" />
+    )}
 	<article class="prose text-center max-w-none" set:html={UPCOMMING_EVENT_MD.compiledContent()}></article>
-    <a href={UPCOMMING_EVENT_MD.frontmatter.signup_url}>
-        <Button variant="light_fill" $class="w-full">Meld je aan!</Button>
-    </a>
+    {frontmatter.signup_url && (
+        <a href={frontmatter.signup_url}>
+            <Button variant="light_fill" $class="w-full">Meld je aan!</Button>
+        </a>
+    )}
 </BaseLayout>

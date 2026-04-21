@@ -5,6 +5,9 @@ import PAGECONFIG_JSON from "../../pageconfig.json";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import BaseImage from "../../components/BaseImage.astro";
 import SeparationBar from "../../components/SeparationBar.astro";
+import {ConfigSchema} from "../../content.config";
+
+const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
 export const getStaticPaths = (async () => {
     const posts = await getCollection('posts');
@@ -22,7 +25,7 @@ const {post} = Astro.props;
 const {Content} = await render(post);
 ---
 
-<BaseLayout title={PAGECONFIG_JSON.site_title + " | " + post.data.title}>
+<BaseLayout title={pageconfig.site_title + " | " + post.data.title}>
     <div class="flex flex-col gap-inner text-center">
         <h1 class="text-3xl font-semibold">{post.data.title}</h1>
         <p>

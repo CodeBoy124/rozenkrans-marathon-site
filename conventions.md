@@ -8,5 +8,4 @@ value constants (not entire expressions): THIS_CASE
 variables: this_case
 functions: thisCase
 types (not Props): ThisCase_t
-
-TODO: JSON/MD validation with Zod
+validate imported JSON/MD with Zod
