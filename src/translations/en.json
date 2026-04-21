@@ -1,0 +1,21 @@
+{
+  "BaseLayout": {
+    "head": {
+      "title": "Rosary Marathon"
+    },
+    "header": {
+      "title_html": "Rosary<br/>Marathon",
+      "toggle_navbar": "Open/close navigation bar",
+      "close_navbar": "Close navigation bar"
+    },
+    "nav": {
+      "posts": "Posts",
+      "upcomming_event": "Upcomming event",
+      "faq": "Frequently asked questions"
+    },
+    "footer": {
+      "maillist_register": "Register for maillist",
+      "google_icon_credits": "(Credits) Icons used from Google"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "BaseLayout": {
+    "head": {
+      "title": "Rozenkrans Marathon"
+    },
+    "header": {
+      "title_html": "Rozenkrans<br/>Marathon",
+      "toggle_navbar": "Navigatiebalk openen/sluiten",
+      "close_navbar": "Navigatiebalk sluiten"
+    },
+    "nav": {
+      "posts": "Posts",
+      "upcomming_event": "Komend evenement",
+      "faq": "Veelgestelde vragen"
+    },
+    "footer": {
+      "maillist_register": "Registreer voor de maillijst",
+      "google_icon_credits": "(Credits) Iconen gebruikt van Google"
+    }
+  }
+}

@@ -6,6 +6,7 @@ import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import PAGECONFIG_JSON from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
 import { ConfigSchema } from "../content.config";
+import { i18n } from "../translations/i18n";
 
 const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
@@ -23,7 +24,7 @@ const {title, $class} = Astro.props;
         <link rel="icon" href={pageconfig.site_url + "favicon.ico"} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<title>{i18n().BaseLayout.head.title} | {title}</title>
         <slot name="head" />
         <script src="../scripts/collapsable.ts"></script>
 	</head>
@@ -34,9 +35,9 @@ const {title, $class} = Astro.props;
                 <div class="flex justify-between items-center text-white">
                     <a href={pageconfig.site_url} class="flex items-center gap-inner">
                         <img src={LOGO_PNG.src} alt="Rozenkrans marathon logo" class="h-12.5" />
-                        <h1>Rozenkrans<br />Marathon</h1>
+                        <h1 set:html={i18n().BaseLayout.header.title_html}></h1>
                     </a>
-                    <button aria-label="toggle navbar" collapse-src="header">
+                    <button aria-label={i18n().BaseLayout.header.toggle_navbar} collapse-src="header">
                         <!-- ic:baseline-menu -->
                         <svg collapse-target="header" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></svg>
 
@@ -49,13 +50,13 @@ const {title, $class} = Astro.props;
                 <div class="bg-primary w-full">
                     <div class="m-auto w-page max-w-full pb-base px-content">
                         <ul class="list-disc list-inside text-screen">
-                            <li><a href={pageconfig.site_url + "post/"}>Posts</a></li>
-                            <li><a href={pageconfig.site_url + "upcomming-event"}>Komend evenement</a></li>
-                            <li><a href={pageconfig.site_url + "faq"}>FAQ</a></li>
+                            <li><a href={pageconfig.site_url + "post/"}>{i18n().BaseLayout.nav.posts}</a></li>
+                            <li><a href={pageconfig.site_url + "upcomming-event"}>{i18n().BaseLayout.nav.upcomming_event}</a></li>
+                            <li><a href={pageconfig.site_url + "faq"}>{i18n().BaseLayout.nav.faq}</a></li>
                         </ul>
                     </div>
                 </div>
-                <button collapse-src="header" class="bg-black opacity-50 h-screen w-full" aria-label="Sluit menu"></button>
+                <button collapse-src="header" class="bg-black opacity-50 h-screen w-full" aria-label={i18n().BaseLayout.header.close_navbar}></button>
             </nav>
         </div>
         
@@ -76,11 +77,11 @@ const {title, $class} = Astro.props;
 
             <a href={pageconfig.maillist_url} class="w-full">
                 <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full">
-                    Registreer voor de maillijst
+                    {i18n().BaseLayout.footer.maillist_register}
                 </Button>
             </a>
 
-            <a href="https://icon-sets.iconify.design/ic/" class="text-white italic text-center text-sm opacity-65">(Credits) Iconen gebruikt van Google</a>
+            <a href="https://icon-sets.iconify.design/ic/" class="text-white italic text-center text-sm opacity-65">{i18n().BaseLayout.footer.google_icon_credits}</a>
         </footer>
 	</body>
 </html>
