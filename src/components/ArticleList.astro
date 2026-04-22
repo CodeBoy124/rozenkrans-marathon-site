@@ -21,7 +21,7 @@ const {title, articles, $class, ...extras} = Astro.props;
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
                     <a href={PAGECONFIG_JSON.site_url + "post/" + article.id}>
-                    <BaseImage src={article.data.cover_image} alt={article.data.title} variant="noshadow" $class="aspect-video" />
+                    <BaseImage src={article.data.cover.image} alt={article.data.cover.alt} variant="noshadow" $class="aspect-video" />
                     <div class="p-inner flex flex-col gap-0 justify-center items-center">
                         <span class="font-semibold">{title}</span>
                         <p>

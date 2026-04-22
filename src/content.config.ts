@@ -14,19 +14,20 @@ const zod_image_path = z.custom<`${string}`>((val) => {
   return typeof val === "string" ? IMG_PATH_RGX.test(val) : false;
 });
 
+const zod_image = () => z.object({ image: zod_image_path, alt: z.string() });
+
 const posts = defineCollection({
   loader: glob({ base: "./src/content/posts", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
     kind: z.enum(["Evenement", "Lezing", "Overig"]),
     created_at: z.date(),
-    cover_image: zod_image_path,
+    cover: zod_image(),
     galary: z.optional(z.array(zod_image_path)),
   }),
 });
 
 export const ConfigSchema = z.object({
-  site_title: z.string(),
   site_url: z.url(),
   maillist_url: z.url(),
   socials: z.array(
@@ -41,7 +42,7 @@ export const ConfigSchema = z.object({
 });
 
 export const HomePageSchema = z.object({
-  cover_image: zod_image_path,
+  cover: zod_image(),
 });
 
 export const FaqPageSchema = z.object({
@@ -54,7 +55,7 @@ export const FaqPageSchema = z.object({
 });
 
 export const UpcommingEventPageSchema = z.object({
-  cover_image: z.optional(zod_image_path),
+  cover: z.optional(zod_image()),
   signup_url: z.optional(z.url()),
 });
 

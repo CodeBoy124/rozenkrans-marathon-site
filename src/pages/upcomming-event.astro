@@ -11,8 +11,8 @@ const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatte
 ---
 
 <BaseLayout title={i18n().pageUpcommingEvent.title}>
-    {frontmatter.cover_image && (
-        <BaseImage src={frontmatter.cover_image} alt={i18n().pageUpcommingEvent.cover_image} $class="aspect-video" />
+    {frontmatter.cover && (
+        <BaseImage src={frontmatter.cover.image} alt={frontmatter.cover.alt} $class="aspect-video" />
     )}
 	<article class="prose text-center max-w-none" set:html={UPCOMMING_EVENT_MD.compiledContent()}></article>
     {frontmatter.signup_url && (

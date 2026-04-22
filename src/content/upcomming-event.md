@@ -1,5 +1,7 @@
 ---
-cover_image: /st-peter-basilica.010.jpg
+cover:
+  image: /st-peter-basilica.010.jpg
+  alt: de Sint Pieter
 signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
 ---
 

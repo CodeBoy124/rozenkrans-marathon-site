@@ -1,3 +1,17 @@
+components:
+  photo:
+    type: object
+    fields:
+      - name: image
+        label: Afbeelding
+        type: image
+        required: true
+      - name: alt
+        label: Alt tekst
+        type: string
+        description: Een enkele regel/paar woorden die de afbeelding omschrijven
+        required: true
+
 media:
   input: public
   output: /
@@ -59,9 +73,9 @@ content:
         type: file
         path: src/content/index.md
         fields:
-          - name: cover_image
-            label: Omslagafbeelding
-            type: image
+          - name: cover
+            label: Omslag
+            component: photo
             required: true
           - name: body
             type: rich-text
@@ -103,9 +117,9 @@ content:
         type: file
         path: src/content/upcomming-event.md
         fields:
-          - name: cover_image
-            label: Omslagafbeelding
-            type: image
+          - name: cover
+            label: Omslag
+            component: photo
             required: false
           - name: signup_url
             label: URL voor Registratie
@@ -150,11 +164,10 @@ content:
             label: Gemaakt op
             type: date
             required: true
-          - name: cover_image
-            label: Omslagafbeelding
-            type: image
+          - name: cover
+            label: Omslag
+            comonent: photo
             required: true
-            description: De afbeelding die bovenaan de post te zien is
           - name: galary
             label: Galarij
             description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.

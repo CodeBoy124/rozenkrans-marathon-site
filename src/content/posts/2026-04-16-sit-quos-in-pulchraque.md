@@ -2,7 +2,9 @@
 title: Sit quos in pulchraque
 kind: Lezing
 created_at: 2026-04-16
-cover_image: /600e9f59166b4a0591ad427cc66e9ed2.webp
+cover:
+  image: /600e9f59166b4a0591ad427cc66e9ed2.webp
+  alt: Een mooie zonsondergang met rood kleurende wolken
 ---
 
 **Lorem** markdownum accepit regnumque perdant; nec copia aequora locum. Matrem

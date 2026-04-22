@@ -17,7 +17,7 @@ const featured_posts = post_list.slice(0, 2);
 ---
 
 <BaseLayout>
-	<BaseImage src={frontmatter.cover_image} alt={i18n().pageStart.cover_image} $class="aspect-video" />
+	<BaseImage src={frontmatter.cover.image} alt={frontmatter.cover.alt} $class="aspect-video" />
 	<article class="prose text-center max-w-none" set:html={HOME_PAGE_MD.compiledContent()}></article>
 	<SeparationBar />
 	<ArticleList title={i18n().pageStart.recent_posts} articles={featured_posts} />

@@ -1,5 +1,7 @@
 ---
-cover_image: /pexels-rdne-5875445.jpg
+cover:
+  image: /pexels-rdne-5875445.jpg
+  alt: Dominicaanse priester met Rozenkrans in zijn handen
 ---
 
 # Welkom op onze website
