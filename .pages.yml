@@ -96,7 +96,7 @@ content:
               min: 1
               collapsible:
                 collapsed: true
-                summary: "{vraag}"
+                summary: "{question}"
             fields:
               - name: question
                 label: Vraag
@@ -166,7 +166,7 @@ content:
             required: true
           - name: cover
             label: Omslag
-            comonent: photo
+            component: photo
             required: true
           - name: galary
             label: Galarij
