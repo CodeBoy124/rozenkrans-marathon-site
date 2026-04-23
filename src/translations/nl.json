@@ -19,8 +19,7 @@
     }
   },
   "pagePostSingle": {
-    "galary": "Galarij",
-    "galary_image": "Galarij afbeelding"
+    "galary": "Galarij"
   },
   "pagePostList": {
     "title": "Alle posts"

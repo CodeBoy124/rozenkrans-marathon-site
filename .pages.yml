@@ -171,10 +171,12 @@ content:
           - name: galary
             label: Galarij
             description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
-            type: image
+            component: photo
             required: false
-            options:
-              multiple: true
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
           - name: body
             type: rich-text
             required: true

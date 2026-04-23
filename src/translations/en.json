@@ -19,8 +19,7 @@
     }
   },
   "pagePostSingle": {
-    "galary": "Galary",
-    "galary_image": "Galary image"
+    "galary": "Galary"
   },
   "pagePostList": {
     "title": "All posts"
@@ -33,7 +32,6 @@
   },
   "pageUpcommingEvent": {
     "title": "Upcomming event",
-    "cover_image": "Dominican priest with a Rosary in his hands",
     "signup": "Signup now!"
   }
 }
