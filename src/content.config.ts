@@ -28,7 +28,6 @@ const posts = defineCollection({
 });
 
 export const ConfigSchema = z.object({
-  site_url: z.url(),
   maillist_url: z.url(),
   socials: z.array(
     z.object({

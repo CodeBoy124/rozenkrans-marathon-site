@@ -21,7 +21,7 @@ const {title, $class} = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-        <link rel="icon" href={pageconfig.site_url + "favicon.ico"} />
+        <link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>
@@ -35,7 +35,7 @@ const {title, $class} = Astro.props;
         <div class="bg-primary sticky top-0 z-50 shadow-sm/25">
             <header class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto">
                 <div class="flex justify-between items-center text-white">
-                    <a href={pageconfig.site_url} class="flex items-center gap-inner">
+                    <a href="/" class="flex items-center gap-inner">
                         <img src={LOGO_PNG.src} alt="Rozenkrans marathon logo" class="h-12.5" />
                         <h1 set:html={i18n().BaseLayout.header.title_html}></h1>
                     </a>
@@ -52,9 +52,9 @@ const {title, $class} = Astro.props;
                 <div class="bg-primary w-full">
                     <div class="m-auto w-page max-w-full pb-base px-content">
                         <ul class="list-disc list-inside text-screen">
-                            <li><a href={pageconfig.site_url + "post/"}>{i18n().BaseLayout.nav.posts}</a></li>
-                            <li><a href={pageconfig.site_url + "upcomming-event"}>{i18n().BaseLayout.nav.upcomming_event}</a></li>
-                            <li><a href={pageconfig.site_url + "faq"}>{i18n().BaseLayout.nav.faq}</a></li>
+                            <li><a href="/post/">{i18n().BaseLayout.nav.posts}</a></li>
+                            <li><a href="/upcomming-event">{i18n().BaseLayout.nav.upcomming_event}</a></li>
+                            <li><a href="/faq">{i18n().BaseLayout.nav.faq}</a></li>
                         </ul>
                     </div>
                 </div>

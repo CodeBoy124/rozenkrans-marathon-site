@@ -22,10 +22,6 @@ content:
     type: file
     path: src/pageconfig.json
     fields:
-      - name: site_url
-        label: Site URL
-        type: string
-        required: true
       - name: maillist_url
         label: Maillijst link
         type: string
