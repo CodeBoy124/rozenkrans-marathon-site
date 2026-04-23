@@ -10,12 +10,12 @@ const variant_styles = {
 interface Props {
     variant?: 'noshadow' | 'shadow'
     src: ImageMetadata|string;
-    alt: string;
+    alt?: string;
     loading?: "eager"|"lazy";
     $class?: ClassNameValue;
 }
 
-const {variant = 'shadow', src, alt, loading = null, $class} = Astro.props;
+const {variant = 'shadow', src, alt = "", loading = null, $class} = Astro.props;
 
 ---
 

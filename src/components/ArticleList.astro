@@ -21,15 +21,15 @@ const {title, articles, $class, ...extras} = Astro.props;
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
                     <a href={PAGECONFIG_JSON.site_url + "post/" + article.id}>
-                    <BaseImage src={article.data.cover.image} alt={article.data.cover.alt} variant="noshadow" $class="aspect-video" />
-                    <div class="p-inner flex flex-col gap-0 justify-center items-center">
-                        <span class="font-semibold">{title}</span>
-                        <p>
-                            <span class="italic">{article.data.created_at.toLocaleDateString()}</span>
-                            -
-                            <span>{article.data.kind}</span>
-                        </p>
-                    </div>
+                        <BaseImage src={article.data.cover.image} alt={article.data.cover.alt} variant="noshadow" $class="aspect-video" />
+                        <div class="p-inner flex flex-col gap-0 justify-center items-center">
+                            <h4 class="font-semibold">{title}</h4>
+                            <p>
+                                <time class="italic">{article.data.created_at.toLocaleDateString()}</time>
+                                -
+                                <span>{article.data.kind}</span>
+                            </p>
+                        </div>
                     </a>
                 </div>
             </li>

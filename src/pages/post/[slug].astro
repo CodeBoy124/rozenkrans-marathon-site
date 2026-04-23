@@ -24,9 +24,9 @@ const {Content} = await render(post);
 
 <BaseLayout title={post.data.title}>
     <div class="flex flex-col gap-inner text-center">
-        <h1 class="text-3xl font-semibold">{post.data.title}</h1>
+        <h2 class="text-3xl font-semibold">{post.data.title}</h2>
         <p>
-            <span><i>{post.data.created_at.toLocaleDateString()}</i></span>
+            <time><i>{post.data.created_at.toLocaleDateString()}</i></time>
             -
             <span>{post.data.kind}</span>
         </p>
@@ -38,7 +38,7 @@ const {Content} = await render(post);
     {(post.data.galary) && (
         <SeparationBar />
         <div class="flex flex-col gap-content">
-            <h2 class="text-center text-2xl font-semibold">{i18n().pagePostSingle.galary}</h2>
+            <h3 class="text-center text-2xl font-semibold">{i18n().pagePostSingle.galary}</h3>
             {post.data.galary.map((img) => (
                 <BaseImage src={img.image} alt={img.alt} />
             ))}

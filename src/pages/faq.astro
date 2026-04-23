@@ -11,16 +11,11 @@ const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
     <div class="flex flex-col gap-content">
-        {frontmatter.items.map((item, id) => (
-            <button collapse-src={"faq-"+id} class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
-                <div class="flex justify-between font-semibold">
-                    <span class="text-lg">{item.question}</span>
-
-                    <span collapse-target={"faq-"+id}>+</span>
-                    <span collapse-target={"faq-"+id} class="hidden">-</span>
-                </div>
-                <p collapse-target={"faq-"+id} class="hidden text-left">{item.answer}</p>
-            </button>
+        {frontmatter.items.map((item) => (
+            <details name="faq" class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
+                <summary class="font-semibold text-lg">{item.question}</summary>
+                <p class="text-left">{item.answer}</p>
+            </details>
         ))}
     </div>
 </BaseLayout>
