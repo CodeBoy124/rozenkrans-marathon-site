@@ -54,7 +54,7 @@ export const FaqPageSchema = z.object({
 });
 
 export const UpcommingEventPageSchema = z.object({
-  cover: z.optional(zod_image()),
+  image: z.optional(zod_image_path),
   signup_url: z.optional(z.url()),
 });
 

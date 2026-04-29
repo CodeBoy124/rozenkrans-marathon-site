@@ -113,9 +113,9 @@ content:
         type: file
         path: src/content/upcomming-event.md
         fields:
-          - name: cover
-            label: Omslag
-            component: photo
+          - name: image
+            label: Afbeelding
+            type: image
             required: false
           - name: signup_url
             label: URL voor Registratie
