@@ -36,15 +36,19 @@ const {title, $class} = Astro.props;
             <header class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto">
                 <div class="flex justify-between items-center text-white">
                     <a href="/" class="flex items-center gap-inner">
-                        <img src={LOGO_PNG.src} alt="Rozenkrans marathon logo" class="h-12.5" />
+                        <img src={LOGO_PNG.src} alt="" class="h-12.5" />
                         <h1 set:html={i18n().BaseLayout.header.title_html}></h1>
                     </a>
                     <button aria-label={i18n().BaseLayout.header.toggle_navbar} collapse-src="header">
                         <!-- ic:baseline-menu -->
-                        <svg collapse-target="header" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/></svg>
+                        <svg collapse-target="header" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"/>
+                        </svg>
 
                         <!-- ic:baseline-close -->
-                        <svg collapse-target="header" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/></svg>
+                        <svg collapse-target="header" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"/>
+                        </svg>
                     </button>
                 </div>
             </header>

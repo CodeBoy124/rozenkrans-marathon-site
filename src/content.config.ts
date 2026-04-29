@@ -41,7 +41,7 @@ export const ConfigSchema = z.object({
 });
 
 export const HomePageSchema = z.object({
-  cover: zod_image(),
+  image: zod_image_path,
 });
 
 export const FaqPageSchema = z.object({

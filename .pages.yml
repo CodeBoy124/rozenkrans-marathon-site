@@ -69,9 +69,9 @@ content:
         type: file
         path: src/content/index.md
         fields:
-          - name: cover
-            label: Omslag
-            component: photo
+          - name: image
+            label: Afbeelding
+            type: image
             required: true
           - name: body
             type: rich-text
