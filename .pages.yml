@@ -160,9 +160,9 @@ content:
             label: Gemaakt op
             type: date
             required: true
-          - name: cover
-            label: Omslag
-            component: photo
+          - name: image
+            label: Afbeelding
+            type: image
             required: true
           - name: galary
             label: Galarij

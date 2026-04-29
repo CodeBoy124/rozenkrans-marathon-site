@@ -2,9 +2,7 @@
 title: Mijn eerste test post
 kind: Overig
 created_at: 2026-04-15
-cover:
-  image: /pexels-rdne-5875445.jpg
-  alt: Dominicaanse priester met Rozenkrans in zijn handen
+image: /pexels-rdne-5875445.jpg
 galary:
   - image: /st-peter-basilica.010.jpg
     alt: de Sint Pieter

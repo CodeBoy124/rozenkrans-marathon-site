@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry } from 'astro:content'
 import BaseImage from "./BaseImage.astro"
-import PAGECONFIG_JSON from "../pageconfig.json";
 import type { HTMLAttributes } from 'astro/types';
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
 
@@ -21,7 +20,7 @@ const {title, articles, $class, ...extras} = Astro.props;
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
                     <a href={"/post/" + article.id}>
-                        <BaseImage src={article.data.cover.image} alt={article.data.cover.alt} variant="noshadow" $class="aspect-video" />
+                        <BaseImage src={article.data.image} alt="" variant="noshadow" $class="aspect-video" />
                         <div class="p-inner flex flex-col gap-0 justify-center items-center">
                             <h4 class="font-semibold">{title}</h4>
                             <p>

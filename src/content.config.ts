@@ -22,7 +22,7 @@ const posts = defineCollection({
     title: z.string(),
     kind: z.enum(["Evenement", "Lezing", "Overig"]),
     created_at: z.date(),
-    cover: zod_image(),
+    image: zod_image_path,
     galary: z.optional(z.array(zod_image())),
   }),
 });
