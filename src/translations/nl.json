@@ -34,5 +34,9 @@
   "pageUpcommingEvent": {
     "title": "Komend evenement",
     "signup": "Meld je aan!"
+  },
+  "404": {
+    "description": "Deze pagina bestaat niet",
+    "home_link": "Navigeer naar startpagina"
   }
 }

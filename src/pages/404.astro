@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { i18n } from "../translations/i18n";
+---
+
+<BaseLayout title="404" $class="text-center">
+    <h1 class="text-9xl font-semibold" id="main">404</h1>
+    <p>{i18n()[404].description}</p>
+    <a href="/" class="underline text-secundary-on-light">{i18n()[404].home_link}</a>
+</BaseLayout>
