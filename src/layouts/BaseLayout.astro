@@ -32,7 +32,10 @@ const {title, $class} = Astro.props;
 	</head>
 	<body class={twMerge("bg-primary flex flex-col", $class)}>
         <!-- Topbar -->
-        <div class="bg-primary sticky top-0 z-50 shadow-sm/25">
+        <div class="bg-primary sticky top-0 shadow-sm/25">
+            <!-- Skip to main content -->
+            <a href="#main" class="block static left-0 top-0 w-0 h-0 overflow-hidden text-center focus:w-auto focus:h-auto focus:overflow-auto"><span class="p-2 text-white underline rounded-br-sm">{i18n().BaseLayout.header.skip_to_main}</span></a>
+
             <header class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto">
                 <div class="flex justify-between items-center text-white">
                     <a href="/" class="flex items-center gap-inner">
@@ -65,7 +68,7 @@ const {title, $class} = Astro.props;
                 <button collapse-src="header" class="bg-black opacity-50 h-screen w-full"></button>
             </nav>
         </div>
-        
+
         <!-- Main -->
         <main class="bg-screen">
             <div class="w-full max-w-page m-auto flex flex-col gap-content p-content">
@@ -82,7 +85,7 @@ const {title, $class} = Astro.props;
             </div>
 
             <a href={pageconfig.maillist_url} class="w-full">
-                <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full">
+                <Button variant="dark_line" $class="text-secundary-on-dark px-base w-full" tabindex="-1">
                     {i18n().BaseLayout.footer.maillist_register}
                 </Button>
             </a>

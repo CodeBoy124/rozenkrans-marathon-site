@@ -32,7 +32,7 @@ const {Content} = await render(post);
         </p>
     </div>
     <BaseImage src={post.data.image} alt="" />
-    <article class="prose max-w-none">
+    <article id="main" class="prose max-w-none">
         <Content />
     </article>
     {(post.data.galary) && (

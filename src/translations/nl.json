@@ -4,6 +4,7 @@
       "title": "Rozenkrans Marathon"
     },
     "header": {
+      "skip_to_main": "Ga naar hoofdgedeelte",
       "title_html": "Rozenkrans<br/>Marathon",
       "toggle_navbar": "Navigatiebalk openen/sluiten",
       "close_navbar": "Navigatiebalk sluiten"

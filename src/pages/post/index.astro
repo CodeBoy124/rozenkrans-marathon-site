@@ -13,5 +13,5 @@ post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime
 <BaseLayout title={i18n().pagePostList.title}>
     <article class="prose text-center max-w-none" set:html={POSTLIST_MD.compiledContent()}></article>
 	<SeparationBar />
-    <ArticleList title={i18n().pagePostList.title} articles={post_list} />
+    <ArticleList id="main" title={i18n().pagePostList.title} articles={post_list} />
 </BaseLayout>

@@ -10,7 +10,7 @@ const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
 <BaseLayout title={i18n().pageFaq.title}>
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
-    <div class="flex flex-col gap-content">
+    <div id="main" class="flex flex-col gap-content">
         {frontmatter.items.map((item) => (
             <details name="faq" class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
                 <summary class="font-semibold text-lg">{item.question}</summary>

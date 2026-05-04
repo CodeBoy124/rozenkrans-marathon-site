@@ -4,6 +4,7 @@
       "title": "Rosary Marathon"
     },
     "header": {
+      "skip_to_main": "Go to main content",
       "title_html": "Rosary<br/>Marathon",
       "toggle_navbar": "Open/close navigation bar",
       "close_navbar": "Close navigation bar"
