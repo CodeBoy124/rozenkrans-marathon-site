@@ -12,3 +12,7 @@
   --color-secundary-on-light: #cd482c;
   --color-screen: #ededed;
 }
+
+#main {
+  scroll-margin-top: 80px;
+}
