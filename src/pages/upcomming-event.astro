@@ -10,7 +10,7 @@ const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatte
 
 ---
 
-<BaseLayout title={i18n().pageUpcommingEvent.title}>
+<BaseLayout title={i18n().pageUpcommingEvent.title} seo={frontmatter.seo}>
     {frontmatter.image && (
         <BaseImage src={frontmatter.image} alt="" $class="aspect-video" />
     )}

@@ -7,7 +7,7 @@ import { i18n } from "../translations/i18n";
 const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
 ---
 
-<BaseLayout title={i18n().pageFaq.title}>
+<BaseLayout title={i18n().pageFaq.title} seo={frontmatter.seo}>
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
     <div id="main" class="flex flex-col gap-content">

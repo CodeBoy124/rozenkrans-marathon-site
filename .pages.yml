@@ -11,6 +11,17 @@ components:
         type: string
         description: Een enkele regel/paar woorden die de afbeelding omschrijven
         required: true
+  seo:
+    type: object
+    fields:
+      - name: description
+        label: Omschrijving
+        type: string
+        required: true
+      - name: keywords
+        label: Sleutelwoorden
+        type: string
+        required: false
 
 media:
   input: public
@@ -73,6 +84,10 @@ content:
             label: Omslagafbeelding
             type: image
             required: true
+          - name: seo
+            label: SEO
+            component: seo
+            required: true
           - name: body
             type: rich-text
             required: true
@@ -102,6 +117,10 @@ content:
                 label: Antwoord
                 type: text
                 required: true
+          - name: seo
+            label: SEO
+            component: seo
+            required: true
           - name: body
             type: rich-text
             required: true
@@ -122,6 +141,10 @@ content:
             description: Bijvoorbeeld voor Google Forms
             type: string
             required: false
+          - name: seo
+            label: SEO
+            component: seo
+            required: true
           - name: body
             type: rich-text
             required: true
@@ -133,6 +156,10 @@ content:
         type: file
         path: src/content/post-list.md
         fields:
+          - name: seo
+            label: SEO
+            component: seo
+            required: true
           - name: body
             type: rich-text
             required: true
@@ -173,6 +200,10 @@ content:
               collapsible:
                 collapsed: true
                 summary: "{alt}"
+          - name: seo
+            label: SEO
+            component: seo
+            required: true
           - name: body
             type: rich-text
             required: true
