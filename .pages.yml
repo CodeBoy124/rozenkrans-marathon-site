@@ -78,7 +78,7 @@ content:
       - name: home
         label: Start
         type: file
-        path: src/content/index.md
+        path: src/content/nl/index.md
         fields:
           - name: image
             label: Omslagafbeelding
@@ -97,7 +97,7 @@ content:
       - name: faq
         label: FAQ (Vaak gestelde vragen)
         type: file
-        path: src/content/faq.md
+        path: src/content/nl/faq.md
         fields:
           - name: items
             label: Vraag/antwoord lijst
@@ -130,7 +130,7 @@ content:
       - name: upcomming-event
         label: Komend evenement
         type: file
-        path: src/content/upcomming-event.md
+        path: src/content/nl/upcomming-event.md
         fields:
           - name: image
             label: Omslagafbeelding
@@ -154,7 +154,7 @@ content:
       - name: postlist
         label: Posts overzicht
         type: file
-        path: src/content/post-list.md
+        path: src/content/nl/post-list.md
         fields:
           - name: seo
             label: SEO
@@ -169,7 +169,7 @@ content:
       - name: posts
         label: Posts
         type: collection
-        path: src/content/posts
+        path: src/content/nl/posts
         view:
           fields: [title, kind, created_at]
         fields:
