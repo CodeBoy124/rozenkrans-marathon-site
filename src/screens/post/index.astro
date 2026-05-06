@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SeparationBar from "../../components/SeparationBar.astro";
+import ArticleList from "../../components/ArticleList.astro";
+import * as POSTLIST_MD from "../../content/post-list.md";
+import { i18n } from "../../translations/i18n";
+import { PostListPageSchema } from "../../content.config";
+
+const frontmatter = PostListPageSchema.parse(POSTLIST_MD.frontmatter);
+
+const post_list = await getCollection('posts');
+post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
+---
+
+<BaseLayout title={i18n().pagePostList.title} seo={frontmatter.seo}>
+    <article class="prose text-center max-w-none" set:html={POSTLIST_MD.compiledContent()}></article>
+	<SeparationBar />
+    <ArticleList id="main" title={i18n().pagePostList.title} articles={post_list} />
+</BaseLayout>

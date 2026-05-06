@@ -1,0 +1,38 @@
+---
+import { render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BaseImage from "../../components/BaseImage.astro";
+import SeparationBar from "../../components/SeparationBar.astro";
+import { i18n } from "../../translations/i18n";
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const {post} = Astro.props;
+const {Content} = await render(post);
+---
+
+<BaseLayout title={post.data.title} seo={post.data.seo}>
+    <div class="flex flex-col gap-inner text-center">
+        <h2 class="text-3xl font-semibold">{post.data.title}</h2>
+        <p>
+            <time><i>{post.data.created_at.toLocaleDateString()}</i></time>
+            -
+            <span>{post.data.kind}</span>
+        </p>
+    </div>
+    <BaseImage src={post.data.image} alt="" />
+    <article id="main" class="prose max-w-none">
+        <Content />
+    </article>
+    {(post.data.galary) && (
+        <SeparationBar />
+        <div class="flex flex-col gap-content">
+            <h3 class="text-center text-2xl font-semibold">{i18n().pagePostSingle.galary}</h3>
+            {post.data.galary.map((img) => (
+                <BaseImage src={img.image} alt={img.alt} />
+            ))}
+        </div>
+    )}
+</BaseLayout>

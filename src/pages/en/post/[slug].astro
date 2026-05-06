@@ -2,10 +2,10 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
 
-setLocale('nl');
+setLocale('en');
 
-import { setLocale } from "../../translations/i18n";
-import CurrentPage from "../../screens/post/single.astro";
+import { setLocale } from "../../../translations/i18n";
+import CurrentPage from "../../../screens/post/single.astro";
 
 export const getStaticPaths = (async () => {
     const posts = await getCollection('posts');

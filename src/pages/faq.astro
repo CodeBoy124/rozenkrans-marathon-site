@@ -1,21 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import * as FAQ_MD from "../content/faq.md";
-import { FaqPageSchema } from "../content.config";
-import { i18n } from "../translations/i18n";
+import { setLocale } from "../translations/i18n";
+import CurrentPage from "../screens/faq.astro";
 
-const frontmatter = FaqPageSchema.parse(FAQ_MD.frontmatter);
+setLocale('nl');
 ---
 
-<BaseLayout title={i18n().pageFaq.title} seo={frontmatter.seo}>
-    <script src="../scripts/collapsable.ts"></script>
-    <article class="prose text-center max-w-none" set:html={FAQ_MD.compiledContent()}></article>
-    <div id="main" class="flex flex-col gap-content">
-        {frontmatter.items.map((item) => (
-            <details name="faq" class="border-solid border border-secundary-on-light rounded-base inset-shadow-sm/25 shadow-sm/25 p-inner">
-                <summary class="font-semibold text-lg">{item.question}</summary>
-                <p class="text-left">{item.answer}</p>
-            </details>
-        ))}
-    </div>
-</BaseLayout>
+<CurrentPage />

@@ -1,23 +1,8 @@
 ---
-import * as UPCOMMING_EVENT_MD from "../content/upcomming-event.md";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import BaseImage from "../components/BaseImage.astro";
-import Button from "../components/Button.astro";
-import { UpcommingEventPageSchema } from "../content.config";
-import { i18n } from "../translations/i18n";
+import { setLocale } from "../translations/i18n";
+import CurrentPage from "../screens/upcomming-event.astro";
 
-const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatter);
-
+setLocale('nl');
 ---
 
-<BaseLayout title={i18n().pageUpcommingEvent.title} seo={frontmatter.seo}>
-    {frontmatter.image && (
-        <BaseImage src={frontmatter.image} alt="" $class="aspect-video" />
-    )}
-	<article id="main" class="prose text-center max-w-none" set:html={UPCOMMING_EVENT_MD.compiledContent()}></article>
-    {frontmatter.signup_url && (
-        <a href={frontmatter.signup_url}>
-            <Button variant="light_fill" $class="w-full text-white" tabindex="-1">{i18n().pageUpcommingEvent.signup}</Button>
-        </a>
-    )}
-</BaseLayout>
+<CurrentPage />

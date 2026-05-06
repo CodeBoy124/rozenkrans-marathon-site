@@ -3,6 +3,7 @@ import { type CollectionEntry } from 'astro:content'
 import BaseImage from "./BaseImage.astro"
 import type { HTMLAttributes } from 'astro/types';
 import { twMerge, type ClassNameValue } from 'tailwind-merge';
+import { i18nUrl } from '../translations/i18n';
 
 interface Props extends HTMLAttributes<"div"> {
     title: string;
@@ -19,7 +20,7 @@ const {title, articles, $class, ...extras} = Astro.props;
         {articles.map(article => (
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
-                    <a href={"/post/" + article.id}>
+                    <a href={i18nUrl("/post/" + article.id)}>
                         <BaseImage src={article.data.image} alt="" variant="noshadow" $class="aspect-video" />
                         <div class="p-inner flex flex-col gap-0 justify-center items-center">
                             <h4 class="font-semibold">{title}</h4>
