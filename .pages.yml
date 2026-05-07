@@ -75,7 +75,7 @@ content:
     label: NL paginas
     type: group
     items:
-      - name: home
+      - name: nl-home
         label: Start
         type: file
         path: src/content/nl/index.md
@@ -94,7 +94,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: faq
+      - name: nl-faq
         label: FAQ (Vaak gestelde vragen)
         type: file
         path: src/content/nl/faq.md
@@ -127,7 +127,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: upcomming-event
+      - name: nl-upcomming-event
         label: Komend evenement
         type: file
         path: src/content/nl/upcomming-event.md
@@ -151,7 +151,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: postlist
+      - name: nl-postlist
         label: Posts overzicht
         type: file
         path: src/content/nl/post-list.md
@@ -166,7 +166,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: posts
+      - name: nl-posts
         label: Posts
         type: collection
         path: src/content/nl/posts
@@ -214,7 +214,7 @@ content:
     label: EN paginas
     type: group
     items:
-      - name: home
+      - name: en-home
         label: Start
         type: file
         path: src/content/en/index.md
@@ -233,7 +233,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: faq
+      - name: en-faq
         label: FAQ (Vaak gestelde vragen)
         type: file
         path: src/content/en/faq.md
@@ -266,7 +266,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: upcomming-event
+      - name: en-upcomming-event
         label: Komend evenement
         type: file
         path: src/content/en/upcomming-event.md
@@ -290,7 +290,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: postlist
+      - name: en-postlist
         label: Posts overzicht
         type: file
         path: src/content/en/post-list.md
@@ -305,7 +305,7 @@ content:
             options:
               format: markdown
               media: false
-      - name: posts
+      - name: en-posts
         label: Posts
         type: collection
         path: src/content/en/posts
