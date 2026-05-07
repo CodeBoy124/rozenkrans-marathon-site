@@ -23,7 +23,6 @@ components:
         type: string
         required: false
   page_home:
-    type: file
     fields:
       - name: image
         label: Omslagafbeelding
@@ -40,7 +39,6 @@ components:
           format: markdown
           media: false
   page_faq:
-    type: file
     fields:
       - name: items
         label: Vraag/antwoord lijst
@@ -71,7 +69,6 @@ components:
           format: markdown
           media: false
   page_upcomming-event:
-    type: file
     fields:
       - name: image
         label: Omslagafbeelding
@@ -93,7 +90,6 @@ components:
           format: markdown
           media: false
   page_postlist:
-    type: file
     fields:
       - name: seo
         label: SEO
@@ -106,7 +102,6 @@ components:
           format: markdown
           media: false
   page_posts:
-    type: collection
     view:
       fields: [title, kind, created_at]
     fields:
@@ -202,22 +197,27 @@ content:
     items:
       - name: home
         label: Start
+        type: file
         path: src/content/nl/index.md
         component: page_home
       - name: faq
         label: FAQ (Vaak gestelde vragen)
+        type: file
         path: src/content/nl/faq.md
         component: page_faq
       - name: upcomming-event
         label: Komend evenement
+        type: file
         path: src/content/nl/upcomming-event.md
         component: page_upcomming-event
       - name: postlist
         label: Posts overzicht
+        type: file
         path: src/content/nl/post-list.md
         component: page_postlist
       - name: posts
         label: Posts
+        type: collection
         path: src/content/nl/posts
         component: page_posts
   - name: en
@@ -226,21 +226,26 @@ content:
     items:
       - name: home
         label: Start
+        type: file
         path: src/content/en/index.md
         component: page_home
       - name: faq
         label: FAQ (Vaak gestelde vragen)
+        type: file
         path: src/content/en/faq.md
         component: page_faq
       - name: upcomming-event
         label: Komend evenement
+        type: file
         path: src/content/en/upcomming-event.md
         component: page_upcomming-event
       - name: postlist
         label: Posts overzicht
+        type: file
         path: src/content/en/post-list.md
         component: page_postlist
       - name: posts
         label: Posts
+        type: collection
         path: src/content/en/posts
         component: page_posts
