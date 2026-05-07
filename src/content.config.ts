@@ -38,7 +38,7 @@ export const ConfigSchema = z.object({
   maillist_url: z.url(),
   socials: z.array(
     z.object({
-      title: z.optional(z.string()),
+      title: z.string(),
       url: z.url(),
       icon: zod_icon,
       foreground: z.optional(z.string()),

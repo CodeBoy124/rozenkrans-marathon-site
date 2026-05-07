@@ -21,9 +21,9 @@ const {title, articles, $class, ...extras} = Astro.props;
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
                     <a href={i18nUrl("/post/" + article.slug)}>
-                        <BaseImage src={article.post.data.image} alt="" variant="noshadow" $class="aspect-video" />
+                        <BaseImage src={article.post.data.image} alt="" loading="lazy" variant="noshadow" $class="aspect-video" />
                         <div class="p-inner flex flex-col gap-0 justify-center items-center">
-                            <h4 class="font-semibold">{title}</h4>
+                            <h3 class="font-semibold">{title}</h3>
                             <p>
                                 <time class="italic">{article.post.data.created_at.toLocaleDateString()}</time>
                                 -

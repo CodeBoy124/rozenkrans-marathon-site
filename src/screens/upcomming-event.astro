@@ -14,7 +14,7 @@ const frontmatter = UpcommingEventPageSchema.parse(MD.frontmatter);
 
 <BaseLayout title={i18n().pageUpcommingEvent.title} seo={frontmatter.seo}>
     {frontmatter.image && (
-        <BaseImage src={frontmatter.image} alt="" $class="aspect-video" />
+        <BaseImage src={frontmatter.image} alt="" fetchpriority="high" $class="aspect-video" />
     )}
 	<article id="main" class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
     {frontmatter.signup_url && (

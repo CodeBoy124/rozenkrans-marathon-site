@@ -12,16 +12,17 @@ interface Props {
     src: ImageMetadata|string;
     alt?: string;
     loading?: "eager"|"lazy";
+    fetchpriority?: "auto"|"high"|"low";
     $class?: ClassNameValue;
 }
 
-const {variant = 'shadow', src, alt = "", loading = null, $class} = Astro.props;
+const {variant = 'shadow', src, alt = "", loading = null, fetchpriority=null, $class} = Astro.props;
 
 ---
 
 {(typeof(src) == "string") ? (
-    <img src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
+    <img src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
 ) : (
-    <Image src={src} alt={alt} loading={loading} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
+    <Image src={src} alt={alt} loading={loading} fetchpriority={fetchpriority} class={twMerge("w-full object-cover rounded-base", variant_styles[variant], $class)}/>
 )}
 

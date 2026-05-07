@@ -22,7 +22,7 @@ const {Content} = await render(post);
             <span>{post.data.kind}</span>
         </p>
     </div>
-    <BaseImage src={post.data.image} alt="" />
+    <BaseImage src={post.data.image} alt="" fetchpriority="high" />
     <article id="main" class="prose max-w-none">
         <Content />
     </article>

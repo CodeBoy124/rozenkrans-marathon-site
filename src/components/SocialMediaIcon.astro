@@ -5,6 +5,7 @@ import { twMerge, type ClassNameValue } from 'tailwind-merge';
 import {jssToInlineCss, type JssSheet_t} from "../util/jss";
 
 interface Props extends HTMLAttributes<"a"> {
+    title: string;
     href: string;
     icon_id: string;
     foreground?: string;
@@ -12,7 +13,7 @@ interface Props extends HTMLAttributes<"a"> {
     $class?: ClassNameValue
 }
 
-const {href, icon_id, foreground, background, $class, ...extras} = Astro.props;
+const {title, href, icon_id, foreground, background, $class, ...extras} = Astro.props;
 
 const dynamic_style: JssSheet_t = {
     background: background ?? null,
@@ -20,8 +21,9 @@ const dynamic_style: JssSheet_t = {
 };
 ---
 
-<a href={href} class={twMerge($class)} {...extras}>
+<a href={href} class={twMerge("flex flex-col items-center", $class)} {...extras}>
     <div style={jssToInlineCss(dynamic_style)} class="shadow-sm/25 w-12 h-12 flex justify-center items-center rounded-full">
         <Icon name={icon_id} size={38} />
     </div>
+    <span class="text-white italic text-sm">{title}</span>
 </a>

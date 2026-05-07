@@ -127,6 +127,7 @@ const { title, seo, $class } = Astro.props;
         {
           pageconfig.socials.map((v) => (
             <SocialMediaIcon
+              title={v.title}
               icon_id={v.icon}
               href={v.url}
               background={v.background}
@@ -148,7 +149,7 @@ const { title, seo, $class } = Astro.props;
 
       <a
         href="https://icon-sets.iconify.design/ic/"
-        class="text-white italic text-center text-sm opacity-65"
+        class="text-white italic text-center text-sm"
         >{i18n().BaseLayout.footer.google_icon_credits}</a
       >
     </footer>

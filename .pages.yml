@@ -48,10 +48,10 @@ content:
             summary: "{title}"
         fields:
           - name: title
-            label: Identificatie label
+            label: Naam
             type: string
-            required: false
-            description: Dit komt niet op de echte website, maar wordt alleen op dit systeem gebruikt
+            required: true
+            description: Een algemeen identificeerbare naam voor het medium (bijv. Email of Instagram)
           - name: url
             label: URL van account
             type: string
