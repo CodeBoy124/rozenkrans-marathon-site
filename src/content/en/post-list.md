@@ -1,6 +1,6 @@
 ---
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
+  description: Laudantium iste natus error sit voluptatem accusantium doloremque
   keywords: Rozenkrans, Marathon, Katholiek
 ---
 

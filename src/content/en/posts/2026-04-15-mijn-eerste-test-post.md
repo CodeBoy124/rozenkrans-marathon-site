@@ -9,7 +9,7 @@ galary:
   - image: /Bob-Ross-Mountain-Summit.jpg
     alt: Een Bob Ross schilderij van een berg
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
+  description: Laudantium iste natus error sit voluptatem accusantium doloremque
   keywords: Rozenkrans, Marathon, Katholiek
 ---
 

@@ -1,7 +1,7 @@
 ---
 image: /pexels-rdne-5875445.jpg
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
+  description: Laudantium iste natus error sit voluptatem accusantium doloremque
   keywords: Rozenkrans, Marathon, Katholiek
 ---
 

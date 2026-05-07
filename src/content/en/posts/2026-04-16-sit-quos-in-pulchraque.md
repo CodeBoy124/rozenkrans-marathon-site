@@ -4,7 +4,7 @@ kind: Lezing
 created_at: 2026-04-16
 image: /600e9f59166b4a0591ad427cc66e9ed2.webp
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
+  description: Laudantium iste natus error sit voluptatem accusantium doloremque
   keywords: Rozenkrans, Marathon, Katholiek
 ---
 

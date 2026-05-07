@@ -5,7 +5,7 @@ items:
   - question: Een tweede onderwerp
     answer: Hier is nogmaal te zien wat het resultaat is
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
+  description: Laudantium iste natus error sit voluptatem accusantium doloremque
   keywords: Rozenkrans, Marathon, Katholiek
 ---
 
