@@ -3,18 +3,20 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import SeparationBar from "../../components/SeparationBar.astro";
 import ArticleList from "../../components/ArticleList.astro";
-import * as POSTLIST_MD from "../../content/nl/post-list.md";
-import { i18n } from "../../translations/i18n";
+import * as NL_POSTLIST_MD from "../../content/nl/post-list.md";
+import * as EN_POSTLIST_MD from "../../content/en/post-list.md";
+import { i18n, i18nContent } from "../../translations/i18n";
 import { PostListPageSchema } from "../../content.config";
 
-const frontmatter = PostListPageSchema.parse(POSTLIST_MD.frontmatter);
+const MD = i18nContent({nl: NL_POSTLIST_MD, en: EN_POSTLIST_MD});
+const frontmatter = PostListPageSchema.parse(MD.frontmatter);
 
 const post_list = await getCollection('posts');
 post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
 ---
 
 <BaseLayout title={i18n().pagePostList.title} seo={frontmatter.seo}>
-    <article class="prose text-center max-w-none" set:html={POSTLIST_MD.compiledContent()}></article>
+    <article class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
 	<SeparationBar />
     <ArticleList id="main" title={i18n().pagePostList.title} articles={post_list} />
 </BaseLayout>

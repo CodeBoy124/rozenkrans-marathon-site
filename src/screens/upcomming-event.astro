@@ -1,12 +1,14 @@
 ---
-import * as UPCOMMING_EVENT_MD from "../content/nl/upcomming-event.md";
+import * as NL_UPCOMMING_EVENT_MD from "../content/nl/upcomming-event.md";
+import * as EN_UPCOMMING_EVENT_MD from "../content/en/upcomming-event.md";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
 import Button from "../components/Button.astro";
 import { UpcommingEventPageSchema } from "../content.config";
-import { i18n } from "../translations/i18n";
+import { i18n, i18nContent } from "../translations/i18n";
 
-const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatter);
+const MD = i18nContent({nl: NL_UPCOMMING_EVENT_MD, en: EN_UPCOMMING_EVENT_MD});
+const frontmatter = UpcommingEventPageSchema.parse(MD.frontmatter);
 
 ---
 
@@ -14,7 +16,7 @@ const frontmatter = UpcommingEventPageSchema.parse(UPCOMMING_EVENT_MD.frontmatte
     {frontmatter.image && (
         <BaseImage src={frontmatter.image} alt="" $class="aspect-video" />
     )}
-	<article id="main" class="prose text-center max-w-none" set:html={UPCOMMING_EVENT_MD.compiledContent()}></article>
+	<article id="main" class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
     {frontmatter.signup_url && (
         <a href={frontmatter.signup_url}>
             <Button variant="light_fill" $class="w-full text-white" tabindex="-1">{i18n().pageUpcommingEvent.signup}</Button>

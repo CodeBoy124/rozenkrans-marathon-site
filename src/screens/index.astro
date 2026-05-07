@@ -3,12 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BaseImage from "../components/BaseImage.astro";
 import ArticleList from "../components/ArticleList.astro";
 import SeparationBar from "../components/SeparationBar.astro";
-import * as HOME_PAGE_MD from "../content/nl/index.md";
+import * as NL_HOME_PAGE_MD from "../content/nl/index.md";
+import * as EN_HOME_PAGE_MD from "../content/en/index.md";
 import { getCollection } from "astro:content";
 import {HomePageSchema} from "../content.config";
-import { i18n } from "../translations/i18n";
+import { i18n, i18nContent } from "../translations/i18n";
 
-const frontmatter = HomePageSchema.parse(HOME_PAGE_MD.frontmatter);
+const MD = i18nContent({nl: NL_HOME_PAGE_MD, en: EN_HOME_PAGE_MD});
+const frontmatter = HomePageSchema.parse(MD.frontmatter);
 
 const post_list = await getCollection('posts');
 post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
@@ -18,7 +20,7 @@ const featured_posts = post_list.slice(0, 2);
 
 <BaseLayout seo={frontmatter.seo}>
 	<BaseImage src={frontmatter.image} alt="" $class="aspect-video" />
-	<article id="main" class="prose text-center max-w-none" set:html={HOME_PAGE_MD.compiledContent()}></article>
+	<article id="main" class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
 	<SeparationBar />
 	<ArticleList title={i18n().pageStart.recent_posts} articles={featured_posts} />
 </BaseLayout>

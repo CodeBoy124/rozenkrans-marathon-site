@@ -2,6 +2,10 @@ import nl from "./nl.json";
 import en from "./en.json";
 
 export type LocaleKey_t = "nl" | "en";
+export type ContentSet_t<T> = {
+  nl: T;
+  en: T;
+};
 
 const default_locale: LocaleKey_t = "nl";
 let active_locale: LocaleKey_t = "nl";
@@ -20,6 +24,10 @@ export function i18nUrl(target_url: string): string {
   } else {
     return "/" + active_locale + target_url;
   }
+}
+
+export function i18nContent<T>(arg: ContentSet_t<T>): T {
+  return arg[active_locale];
 }
 
 export function i18n() {
