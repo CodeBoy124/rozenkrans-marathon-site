@@ -20,7 +20,7 @@ const {title, articles, $class, ...extras} = Astro.props;
         {articles.map(article => (
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
-                    <a href={i18nUrl("/post/" + article.slug)}>
+                    <a href={import.meta.env.BASE_URL + i18nUrl("/post/" + article.slug)}>
                         <BaseImage src={article.post.data.image} alt="" loading="lazy" variant="noshadow" $class="aspect-video" />
                         <div class="p-inner flex flex-col gap-0 justify-center items-center">
                             <h3 class="font-semibold">{title}</h3>

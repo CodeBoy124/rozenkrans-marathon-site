@@ -25,7 +25,7 @@ components:
 
 media:
   input: public
-  output: /
+  output: /rozenkrans-marathon-site/
 
 content:
   - name: configuration

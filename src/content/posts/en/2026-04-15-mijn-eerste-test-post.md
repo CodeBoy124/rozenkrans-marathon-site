@@ -2,11 +2,11 @@
 title: Mijn eerste test post
 kind: Overig
 created_at: 2026-04-15
-image: /pexels-rdne-5875445.jpg
+image: /rozenkrans-marathon-site/pexels-rdne-5875445.jpg
 galary:
-  - image: /st-peter-basilica.010.jpg
+  - image: /rozenkrans-marathon-site/st-peter-basilica.010.jpg
     alt: de Sint Pieter
-  - image: /Bob-Ross-Mountain-Summit.jpg
+  - image: /rozenkrans-marathon-site/Bob-Ross-Mountain-Summit.jpg
     alt: Een Bob Ross schilderij van een berg
 seo:
   description: Laudantium iste natus error sit voluptatem accusantium doloremque
