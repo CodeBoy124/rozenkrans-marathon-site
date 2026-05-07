@@ -22,6 +22,131 @@ components:
         label: Sleutelwoorden
         type: string
         required: false
+  page_home:
+    type: file
+    fields:
+      - name: image
+        label: Omslagafbeelding
+        type: image
+        required: true
+      - name: seo
+        label: SEO
+        component: seo
+        required: true
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+  page_faq:
+    type: file
+    fields:
+      - name: items
+        label: Vraag/antwoord lijst
+        type: object
+        required: true
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{question}"
+        fields:
+          - name: question
+            label: Vraag
+            type: string
+            required: true
+          - name: answer
+            label: Antwoord
+            type: text
+            required: true
+      - name: seo
+        label: SEO
+        component: seo
+        required: true
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+  page_upcomming-event:
+    type: file
+    fields:
+      - name: image
+        label: Omslagafbeelding
+        type: image
+        required: false
+      - name: signup_url
+        label: URL voor Registratie
+        description: Bijvoorbeeld voor Google Forms
+        type: string
+        required: false
+      - name: seo
+        label: SEO
+        component: seo
+        required: true
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+  page_postlist:
+    type: file
+    fields:
+      - name: seo
+        label: SEO
+        component: seo
+        required: true
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
+  page_posts:
+    type: collection
+    view:
+      fields: [title, kind, created_at]
+    fields:
+      - name: title
+        label: Titel
+        type: string
+        required: true
+      - name: kind
+        label: Soort
+        type: select
+        required: true
+        options:
+          values: [Evenement, Lezing, Overig]
+      - name: created_at
+        label: Gemaakt op
+        type: date
+        required: true
+      - name: image
+        label: Omslagafbeelding
+        type: image
+        required: true
+      - name: galary
+        label: Galarij
+        description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
+        component: photo
+        required: false
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{alt}"
+      - name: seo
+        label: SEO
+        component: seo
+        required: true
+      - name: body
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          media: false
 
 media:
   input: public
@@ -71,142 +196,51 @@ content:
             type: string
             required: true
             description: De achtergrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#FFFFFF neer te zetten, maar gradients zijn ook mogelijk (via CSS)
-  - name: pages
-    label: Pagina's
+  - name: nl
+    label: NL pagina's
     type: group
     items:
       - name: home
         label: Start
-        type: file
         path: src/content/nl/index.md
-        fields:
-          - name: image
-            label: Omslagafbeelding
-            type: image
-            required: true
-          - name: seo
-            label: SEO
-            component: seo
-            required: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+        component: page_home
       - name: faq
         label: FAQ (Vaak gestelde vragen)
-        type: file
         path: src/content/nl/faq.md
-        fields:
-          - name: items
-            label: Vraag/antwoord lijst
-            type: object
-            required: true
-            list:
-              min: 1
-              collapsible:
-                collapsed: true
-                summary: "{question}"
-            fields:
-              - name: question
-                label: Vraag
-                type: string
-                required: true
-              - name: answer
-                label: Antwoord
-                type: text
-                required: true
-          - name: seo
-            label: SEO
-            component: seo
-            required: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+        component: page_faq
       - name: upcomming-event
         label: Komend evenement
-        type: file
         path: src/content/nl/upcomming-event.md
-        fields:
-          - name: image
-            label: Omslagafbeelding
-            type: image
-            required: false
-          - name: signup_url
-            label: URL voor Registratie
-            description: Bijvoorbeeld voor Google Forms
-            type: string
-            required: false
-          - name: seo
-            label: SEO
-            component: seo
-            required: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+        component: page_upcomming-event
       - name: postlist
         label: Posts overzicht
-        type: file
         path: src/content/nl/post-list.md
-        fields:
-          - name: seo
-            label: SEO
-            component: seo
-            required: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+        component: page_postlist
       - name: posts
         label: Posts
-        type: collection
         path: src/content/nl/posts
-        view:
-          fields: [title, kind, created_at]
-        fields:
-          - name: title
-            label: Titel
-            type: string
-            required: true
-          - name: kind
-            label: Soort
-            type: select
-            required: true
-            options:
-              values: [Evenement, Lezing, Overig]
-          - name: created_at
-            label: Gemaakt op
-            type: date
-            required: true
-          - name: image
-            label: Omslagafbeelding
-            type: image
-            required: true
-          - name: galary
-            label: Galarij
-            description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
-            component: photo
-            required: false
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{alt}"
-          - name: seo
-            label: SEO
-            component: seo
-            required: true
-          - name: body
-            type: rich-text
-            required: true
-            options:
-              format: markdown
-              media: false
+        component: page_posts
+  - name: en
+    label: EN pagina's
+    type: group
+    items:
+      - name: home
+        label: Start
+        path: src/content/en/index.md
+        component: page_home
+      - name: faq
+        label: FAQ (Vaak gestelde vragen)
+        path: src/content/en/faq.md
+        component: page_faq
+      - name: upcomming-event
+        label: Komend evenement
+        path: src/content/en/upcomming-event.md
+        component: page_upcomming-event
+      - name: postlist
+        label: Posts overzicht
+        path: src/content/en/post-list.md
+        component: page_postlist
+      - name: posts
+        label: Posts
+        path: src/content/en/posts
+        component: page_posts
