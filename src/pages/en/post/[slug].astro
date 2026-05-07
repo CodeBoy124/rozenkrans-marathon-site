@@ -18,7 +18,8 @@ interface Props {
 }
 
 const {post} = Astro.props;
+const slug = post.id.split('/').slice(1).join('/');
 
 ---
 
-<CurrentPage post={post} />
+<CurrentPage slug={slug} post={post} />

@@ -7,6 +7,7 @@
   --spacing-inner: 7px;
   --spacing-base: 15px;
   --radius-base: 15px;
+  --color-shaded: rgba(0, 0, 0, 0.25);
   --color-primary: #5d776c;
   --color-secundary-on-dark: #fbf7ee;
   --color-secundary-on-light: #cd482c;

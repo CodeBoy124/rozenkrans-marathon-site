@@ -17,7 +17,7 @@ const post_list = all_posts.filter(post => (post.params.lang == getLocale())).ma
 post_list.sort((a, b) => b.post.data.created_at.getTime() - a.post.data.created_at.getTime());
 ---
 
-<BaseLayout title={i18n().pagePostList.title} seo={frontmatter.seo}>
+<BaseLayout slug="post/" title={i18n().pagePostList.title} seo={frontmatter.seo}>
     <article class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
 	<SeparationBar />
     <ArticleList id="main" title={i18n().pagePostList.title} articles={post_list} />

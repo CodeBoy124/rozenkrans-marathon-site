@@ -11,12 +11,13 @@ import { getLocale, i18n, i18nUrl } from "../translations/i18n";
 const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
 interface Props {
+  slug: string;
   title?: string;
   seo?: SeoObject;
   $class?: ClassNameValue;
 }
 
-const { title, seo, $class } = Astro.props;
+const { slug, title, seo, $class } = Astro.props;
 ---
 
 <html lang={getLocale()}>
@@ -97,9 +98,13 @@ const { title, seo, $class } = Astro.props;
         collapse-target="header"
         class="hidden absolute left-0 top-full w-full"
       >
-        <div class="bg-primary w-full">
-          <div class="m-auto w-page max-w-full pb-base px-content">
-            <ul class="list-disc list-inside text-screen">
+        <div class="bg-primary w-full text-screen">
+          <div class="m-auto w-page max-w-full pb-base px-content flex flex-col gap-inner">
+            <ul class="flex gap-inner">
+              {getLocale() != "nl" && (<li><a href={import.meta.env.BASE_URL + "/" + slug} hreflang="nl" class="bg-shaded text-sm p-1 rounded-sm">🇳🇱 Nederlands</a></li>)}
+              {getLocale() != "en" && (<li><a href={import.meta.env.BASE_URL + "/en/" + slug} hreflang="en" class="bg-shaded text-sm p-1 rounded-sm">🇬🇧 English</a></li>)}
+            </ul>
+            <ul class="list-disc list-inside">
               <li><a href={import.meta.env.BASE_URL + i18nUrl("/post/")}>{i18n().BaseLayout.nav.posts}</a></li>
               <li><a href={import.meta.env.BASE_URL + i18nUrl("/upcomming-event")}>{i18n().BaseLayout.nav.upcomming_event}</a></li>
               <li><a href={import.meta.env.BASE_URL + i18nUrl("/faq")}>{i18n().BaseLayout.nav.faq}</a></li>

@@ -9,7 +9,7 @@ const MD = i18nContent({nl: NL_FAQ_MD, en: EN_FAQ_MD});
 const frontmatter = FaqPageSchema.parse(MD.frontmatter);
 ---
 
-<BaseLayout title={i18n().pageFaq.title} seo={frontmatter.seo}>
+<BaseLayout slug="faq" title={i18n().pageFaq.title} seo={frontmatter.seo}>
     <script src="../scripts/collapsable.ts"></script>
     <article class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
     <div id="main" class="flex flex-col gap-content">

@@ -20,7 +20,7 @@ const featured_posts = post_list.slice(0, 2);
 
 ---
 
-<BaseLayout seo={frontmatter.seo}>
+<BaseLayout slug="" seo={frontmatter.seo}>
 	<BaseImage src={frontmatter.image} alt="" fetchpriority="high" $class="aspect-video" />
 	<article id="main" class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
 	<SeparationBar />
