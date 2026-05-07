@@ -6,7 +6,7 @@ import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import PAGECONFIG_JSON from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from "tailwind-merge";
 import { ConfigSchema, type SeoObject } from "../content.config";
-import { i18n, i18nUrl } from "../translations/i18n";
+import { getLocale, i18n, i18nUrl } from "../translations/i18n";
 
 const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
@@ -19,7 +19,7 @@ interface Props {
 const { title, seo, $class } = Astro.props;
 ---
 
-<html lang="en">
+<html lang={getLocale()}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" />
