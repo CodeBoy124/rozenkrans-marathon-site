@@ -5,14 +5,16 @@ import SeparationBar from "../../components/SeparationBar.astro";
 import ArticleList from "../../components/ArticleList.astro";
 import * as NL_POSTLIST_MD from "../../content/nl/post-list.md";
 import * as EN_POSTLIST_MD from "../../content/en/post-list.md";
-import { i18n, i18nContent } from "../../translations/i18n";
+import { getLocale, i18n, i18nContent } from "../../translations/i18n";
 import { PostListPageSchema } from "../../content.config";
+import { getPosts } from "../../util/posts";
 
 const MD = i18nContent({nl: NL_POSTLIST_MD, en: EN_POSTLIST_MD});
 const frontmatter = PostListPageSchema.parse(MD.frontmatter);
 
-const post_list = await getCollection('posts');
-post_list.sort((a, b) => b.data.created_at.getTime() - a.data.created_at.getTime());
+const all_posts = await getPosts();
+const post_list = all_posts.filter(post => (post.params.lang == getLocale())).map(post => ({post: post.props.post, slug: post.params.slug}));
+post_list.sort((a, b) => b.post.data.created_at.getTime() - a.post.data.created_at.getTime());
 ---
 
 <BaseLayout title={i18n().pagePostList.title} seo={frontmatter.seo}>

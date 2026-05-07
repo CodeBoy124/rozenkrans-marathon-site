@@ -7,7 +7,7 @@ import { i18nUrl } from '../translations/i18n';
 
 interface Props extends HTMLAttributes<"div"> {
     title: string;
-    articles: CollectionEntry<'posts'>[]
+    articles: {post: CollectionEntry<'posts'>, slug: string}[]
     $class?: ClassNameValue
 }
 
@@ -20,14 +20,14 @@ const {title, articles, $class, ...extras} = Astro.props;
         {articles.map(article => (
             <li>
                 <div class="w-full bg-white rounded-base shadow-md/25">
-                    <a href={i18nUrl("/post/" + article.id)}>
-                        <BaseImage src={article.data.image} alt="" variant="noshadow" $class="aspect-video" />
+                    <a href={i18nUrl("/post/" + article.slug)}>
+                        <BaseImage src={article.post.data.image} alt="" variant="noshadow" $class="aspect-video" />
                         <div class="p-inner flex flex-col gap-0 justify-center items-center">
                             <h4 class="font-semibold">{title}</h4>
                             <p>
-                                <time class="italic">{article.data.created_at.toLocaleDateString()}</time>
+                                <time class="italic">{article.post.data.created_at.toLocaleDateString()}</time>
                                 -
-                                <span>{article.data.kind}</span>
+                                <span>{article.post.data.kind}</span>
                             </p>
                         </div>
                     </a>

@@ -23,7 +23,7 @@ const zod_seo = z.object({
 export type SeoObject = z.infer<typeof zod_seo>;
 
 const posts = defineCollection({
-  loader: glob({ base: "./src/content/nl/posts", pattern: "**/*.md" }),
+  loader: glob({ base: "./src/content/posts", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string(),
     kind: z.enum(["Evenement", "Lezing", "Overig"]),

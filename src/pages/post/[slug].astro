@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection, type CollectionEntry } from "astro:content";
+import {getPosts} from "../../util/posts";
 
 setLocale('nl');
 
@@ -8,11 +9,8 @@ import { setLocale } from "../../translations/i18n";
 import CurrentPage from "../../screens/post/single.astro";
 
 export const getStaticPaths = (async () => {
-    const posts = await getCollection('posts');
-    return posts.map((post) => ({
-        params: {slug: post.id},
-        props: {post}
-    }));
+    const posts = await getPosts();
+    return posts.filter(post => (post.params.lang == 'nl'));
 }) satisfies GetStaticPaths;
 
 interface Props {
