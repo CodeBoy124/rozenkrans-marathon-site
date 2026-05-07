@@ -72,7 +72,7 @@ content:
             required: true
             description: De achtergrond van het icoontje. Het makkelijkste is om gewoon een kleur als \#FFFFFF neer te zetten, maar gradients zijn ook mogelijk (via CSS)
   - name: nl
-    label: NL pagina's
+    label: NL paginas
     type: group
     items:
       - name: home
@@ -211,7 +211,7 @@ content:
               format: markdown
               media: false
   - name: en
-    label: EN pagina's
+    label: EN paginas
     type: group
     items:
       - name: home
