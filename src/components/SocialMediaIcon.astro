@@ -21,9 +21,8 @@ const dynamic_style: JssSheet_t = {
 };
 ---
 
-<a href={href} class={twMerge("flex flex-col items-center", $class)} {...extras}>
+<a href={href} class={twMerge("flex flex-col items-center", $class)} {...extras} title={title}>
     <div style={jssToInlineCss(dynamic_style)} class="shadow-sm/25 w-12 h-12 flex justify-center items-center rounded-full">
         <Icon name={icon_id} size={38} />
     </div>
-    <span class="text-white italic text-sm">{title}</span>
 </a>

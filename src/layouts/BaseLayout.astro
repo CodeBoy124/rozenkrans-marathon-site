@@ -62,12 +62,12 @@ const { slug, title, seo, $class } = Astro.props;
             <h1 set:html={i18n().BaseLayout.header.title_html} />
           </a>
           <button
-            aria-label={i18n().BaseLayout.header.toggle_navbar}
+            title={i18n().BaseLayout.header.toggle_navbar}
             collapse-src="header"
             class="cursor-pointer"
           >
-            <Icon name="lets-icons:meatballs-menu" collapse-target="header" size={24} />
-            <Icon name="lets-icons:close-round" collapse-target="header" class="hidden" size={24} />
+            <Icon name="mdi:menu" collapse-target="header" size={24} />
+            <Icon name="mdi:close" collapse-target="header" class="hidden" size={24} />
           </button>
         </div>
       </header>
@@ -103,7 +103,7 @@ const { slug, title, seo, $class } = Astro.props;
 
     <!-- Footer -->
     <footer
-      class="p-content pb-inner flex flex-col gap-content w-full max-w-page m-auto"
+      class="p-content flex flex-col gap-content w-full max-w-page m-auto"
     >
       <div class="flex justify-center gap-content">
         {
@@ -128,12 +128,6 @@ const { slug, title, seo, $class } = Astro.props;
           {i18n().BaseLayout.footer.maillist_register}
         </Button>
       </a>
-
-      <a
-        href="https://icon-sets.iconify.design/lets-icons/"
-        class="text-white italic text-center text-sm"
-        >{i18n().BaseLayout.footer.icon_credits}</a
-      >
     </footer>
   </body>
 </html>
