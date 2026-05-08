@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import LOGO_PNG from "../assets/rmw-icon-transparent.png";
 import Button from "../components/Button.astro";
+import { Icon } from "astro-icon/components";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import PAGECONFIG_JSON from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from "tailwind-merge";
@@ -63,34 +64,10 @@ const { slug, title, seo, $class } = Astro.props;
           <button
             aria-label={i18n().BaseLayout.header.toggle_navbar}
             collapse-src="header"
+            class="cursor-pointer"
           >
-            <!-- ic:baseline-menu -->
-            <svg
-              collapse-target="header"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"></path>
-            </svg>
-
-            <!-- ic:baseline-close -->
-            <svg
-              collapse-target="header"
-              class="hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
-              ></path>
-            </svg>
+            <Icon name="lets-icons:meatballs-menu" collapse-target="header" size={24} />
+            <Icon name="lets-icons:close-round" collapse-target="header" class="hidden" size={24} />
           </button>
         </div>
       </header>
@@ -153,9 +130,9 @@ const { slug, title, seo, $class } = Astro.props;
       </a>
 
       <a
-        href="https://icon-sets.iconify.design/ic/"
+        href="https://icon-sets.iconify.design/lets-icons/"
         class="text-white italic text-center text-sm"
-        >{i18n().BaseLayout.footer.google_icon_credits}</a
+        >{i18n().BaseLayout.footer.icon_credits}</a
       >
     </footer>
   </body>

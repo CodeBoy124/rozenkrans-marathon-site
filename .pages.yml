@@ -60,7 +60,7 @@ content:
             label: Icoontje
             type: string
             required: true
-            description: Zoek op "https://icon-sets.iconify.design/ic/" naar een icoontje en plak de "Icon name" hier
+            description: Zoek op "https://icon-sets.iconify.design/lets-icons/" naar een icoontje en plak de "Icon name" hier
           - name: foreground
             label: Voorgrond kleur/stijl
             type: string
