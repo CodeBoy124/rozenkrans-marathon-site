@@ -1,9 +1,9 @@
 ---
 seo:
-  description: Iste natus error sit voluptatem accusantium doloremque laudantium
-  keywords: Rozenkrans, Marathon, Katholiek
+  description: Hier vindt je al onze posts, met bijvoorbeeld lezingen die zijn gehouden, of updates over toekomstige evenementen.
+  keywords: Rozenkrans, Rozenkrans Marathon, Katholiek, Blog, Evenementen
 ---
 
-# Hallo
+# Posts
 
-Dit komt er te staan op de _post lijst_
+Hier vindt je al onze posts, met bijvoorbeeld lezingen die zijn gehouden, of updates over evenementen. Hiermee weet je dus wat er allemaal gaande is.

@@ -1,9 +1,9 @@
 ---
 seo:
-  description: Laudantium iste natus error sit voluptatem accusantium doloremque
-  keywords: Rozenkrans, Marathon, Katholiek
+  description: Here you'll find all our posts, with for example reading that have been held, or updates about future events.
+  keywords: Rosary, Rosary Marathon, Catholic, Blog, Events
 ---
 
-# Hallo
+# Posts
 
-Dit komt er te staan op de _post lijst_
+Here you'll find all our posts, with for example reading that have been held, or updates about future events. This way you can be up-to-date about what is going on.

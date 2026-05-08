@@ -17,3 +17,7 @@
 #main {
   scroll-margin-top: 80px;
 }
+
+.prose {
+  width: 100%;
+}
