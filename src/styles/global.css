@@ -21,3 +21,9 @@
 .prose {
   width: 100%;
 }
+
+.prose hr {
+  width: 100%;
+  height: 1px;
+  border-color: var(--color-secundary-on-light);
+}
