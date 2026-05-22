@@ -79,8 +79,8 @@ const { slug, title, seo, $class } = Astro.props;
           <div class="m-auto w-page max-w-full pb-base px-content flex flex-col gap-inner">
             {(slug != null) && (
               <ul class="flex gap-inner">
-                {getLocale() != "nl" && (<li><a href={import.meta.env.BASE_URL + "" + slug} hreflang="nl" class="bg-shaded text-sm p-1 rounded-sm">🇳🇱 Nederlands</a></li>)}
-                {getLocale() != "en" && (<li><a href={import.meta.env.BASE_URL + "en/" + slug} hreflang="en" class="bg-shaded text-sm p-1 rounded-sm">🇬🇧 English</a></li>)}
+                {getLocale() != "nl" && (<li><a href={import.meta.env.BASE_URL} hreflang="nl" class="bg-shaded text-sm p-1 rounded-sm">🇳🇱 Nederlands</a></li>)}
+                {getLocale() != "en" && (<li><a href={import.meta.env.BASE_URL + "en/"} hreflang="en" class="bg-shaded text-sm p-1 rounded-sm">🇬🇧 English</a></li>)}
               </ul>
             )}
             <ul class="list-disc list-inside">
