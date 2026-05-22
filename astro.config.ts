@@ -6,8 +6,8 @@ import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://codeboy124.github.io/",
-  base: "rozenkrans-marathon-site/",
+  site: "http://rozenkransmarathon.nl/",
+  base: "/",
 
   // server: {
   //   host: true,
