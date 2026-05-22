@@ -169,7 +169,7 @@ content:
       - name: nl-posts
         label: Posts
         type: collection
-        path: src/content/nl/posts
+        path: src/content/posts/nl
         view:
           fields: [title, kind, created_at]
         fields:
@@ -308,7 +308,7 @@ content:
       - name: en-posts
         label: Posts
         type: collection
-        path: src/content/en/posts
+        path: src/content/posts/en
         view:
           fields: [title, kind, created_at]
         fields:
