@@ -1,5 +1,5 @@
 ---
-image: /rozenkrans-marathon-site/st-peter-basilica.010.jpg
+image: /st-peter-basilica.010.jpg
 signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
 seo:
   description: Here you'll find information about the upcomming Rosary marathon. This time it is on 31 may 2026 in Baarn (Netherlands).

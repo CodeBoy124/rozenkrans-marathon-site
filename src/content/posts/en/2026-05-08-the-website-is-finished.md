@@ -2,7 +2,7 @@
 title: The website is finished!
 kind: Overig
 created_at: 2026-05-08
-image: /rozenkrans-marathon-site/first-post-cover.png
+image: /first-post-cover.png
 seo:
   description: This is the first post on our brand new website!
   keywords: Rosary Marathon, New, Blog

@@ -2,7 +2,7 @@
 title: De website is klaar!
 kind: Overig
 created_at: 2026-05-08
-image: /rozenkrans-marathon-site/first-post-cover.png
+image: /first-post-cover.png
 seo:
   description: Dit is de eerste post op onze gloedniewe website!
   keywords: Rozenkrans Marathon, Nieuw, Blog
