@@ -4,13 +4,13 @@
     {
       "title": "Instagram",
       "url": "https://www.instagram.com/rozenkransmarathon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-      "icon": "ic:outline-photo-camera",
+      "icon": "mdi:instagram",
       "background": "linear-gradient(0deg,rgba(255, 208, 0, 1) 0%, rgba(242, 78, 53, 1) 50%, rgba(219, 76, 224, 1) 100%)"
     },
     {
       "title": "Email",
       "url": "mailto:rozenkransmarathon@gmail.com",
-      "icon": "ic:outline-email",
+      "icon": "mdi:email",
       "background": "#1c69ad"
     }
   ]

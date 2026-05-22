@@ -16,7 +16,7 @@ const frontmatter = UpcommingEventPageSchema.parse(MD.frontmatter);
     {frontmatter.image && (
         <BaseImage src={frontmatter.image} alt="" fetchpriority="high" $class="aspect-video" />
     )}
-	<article id="main" class="prose text-center max-w-none" set:html={MD.compiledContent()}></article>
+	<article id="main" class="prose text-center w-fit m-auto max-w-none flex flex-col items-center" set:html={MD.compiledContent()}></article>
     {frontmatter.signup_url && (
         <a href={frontmatter.signup_url}>
             <Button variant="light_fill" $class="w-full text-white" tabindex="-1">{i18n().pageUpcommingEvent.signup}</Button>

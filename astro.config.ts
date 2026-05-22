@@ -7,7 +7,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   site: "https://codeboy124.github.io/",
-  base: "/rozenkrans-marathon-site",
+  base: "rozenkrans-marathon-site/",
 
   // server: {
   //   host: true,
@@ -21,7 +21,7 @@ export default defineConfig({
   integrations: [
     icon({
       include: {
-        ic: ["*"],
+        mdi: ["*"],
       },
     }),
   ],

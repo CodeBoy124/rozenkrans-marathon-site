@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import LOGO_PNG from "../assets/rmw-icon-transparent.png";
 import Button from "../components/Button.astro";
+import { Icon } from "astro-icon/components";
 import SocialMediaIcon from "../components/SocialMediaIcon.astro";
 import PAGECONFIG_JSON from "../pageconfig.json";
 import { twMerge, type ClassNameValue } from "tailwind-merge";
@@ -11,7 +12,7 @@ import { getLocale, i18n, i18nUrl } from "../translations/i18n";
 const pageconfig = ConfigSchema.parse(PAGECONFIG_JSON);
 
 interface Props {
-  slug: string;
+  slug: string|null;
   title?: string;
   seo?: SeoObject;
   $class?: ClassNameValue;
@@ -23,7 +24,7 @@ const { slug, title, seo, $class } = Astro.props;
 <html lang={getLocale()}>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href={import.meta.env.BASE_URL + "/favicon.ico"} />
+    <link rel="icon" href={import.meta.env.BASE_URL + "favicon.ico"} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     {
@@ -56,41 +57,17 @@ const { slug, title, seo, $class } = Astro.props;
         class="py-base px-content flex flex-col gap-base w-full max-w-page m-auto"
       >
         <div class="flex justify-between items-center text-white">
-          <a href={import.meta.env.BASE_URL+i18nUrl("/")} class="flex items-center gap-inner">
+          <a href={import.meta.env.BASE_URL+i18nUrl("")} class="flex items-center gap-inner">
             <img src={LOGO_PNG.src} alt="" class="h-12.5" />
             <h1 set:html={i18n().BaseLayout.header.title_html} />
           </a>
           <button
-            aria-label={i18n().BaseLayout.header.toggle_navbar}
+            title={i18n().BaseLayout.header.toggle_navbar}
             collapse-src="header"
+            class="cursor-pointer"
           >
-            <!-- ic:baseline-menu -->
-            <svg
-              collapse-target="header"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M3 18h18v-2H3zm0-5h18v-2H3zm0-7v2h18V6z"></path>
-            </svg>
-
-            <!-- ic:baseline-close -->
-            <svg
-              collapse-target="header"
-              class="hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12z"
-              ></path>
-            </svg>
+            <Icon name="mdi:menu" collapse-target="header" size={24} />
+            <Icon name="mdi:close" collapse-target="header" class="hidden" size={24} />
           </button>
         </div>
       </header>
@@ -100,14 +77,16 @@ const { slug, title, seo, $class } = Astro.props;
       >
         <div class="bg-primary w-full text-screen">
           <div class="m-auto w-page max-w-full pb-base px-content flex flex-col gap-inner">
-            <ul class="flex gap-inner">
-              {getLocale() != "nl" && (<li><a href={import.meta.env.BASE_URL + "/" + slug} hreflang="nl" class="bg-shaded text-sm p-1 rounded-sm">🇳🇱 Nederlands</a></li>)}
-              {getLocale() != "en" && (<li><a href={import.meta.env.BASE_URL + "/en/" + slug} hreflang="en" class="bg-shaded text-sm p-1 rounded-sm">🇬🇧 English</a></li>)}
-            </ul>
+            {(slug != null) && (
+              <ul class="flex gap-inner">
+                {getLocale() != "nl" && (<li><a href={import.meta.env.BASE_URL} hreflang="nl" class="bg-shaded text-sm p-1 rounded-sm">🇳🇱 Nederlands</a></li>)}
+                {getLocale() != "en" && (<li><a href={import.meta.env.BASE_URL + "en/"} hreflang="en" class="bg-shaded text-sm p-1 rounded-sm">🇬🇧 English</a></li>)}
+              </ul>
+            )}
             <ul class="list-disc list-inside">
-              <li><a href={import.meta.env.BASE_URL + i18nUrl("/post/")}>{i18n().BaseLayout.nav.posts}</a></li>
-              <li><a href={import.meta.env.BASE_URL + i18nUrl("/upcomming-event")}>{i18n().BaseLayout.nav.upcomming_event}</a></li>
-              <li><a href={import.meta.env.BASE_URL + i18nUrl("/faq")}>{i18n().BaseLayout.nav.faq}</a></li>
+              <li><a href={import.meta.env.BASE_URL + i18nUrl("post/")}>{i18n().BaseLayout.nav.posts}</a></li>
+              <li><a href={import.meta.env.BASE_URL + i18nUrl("upcomming-event")}>{i18n().BaseLayout.nav.upcomming_event}</a></li>
+              <li><a href={import.meta.env.BASE_URL + i18nUrl("faq")}>{i18n().BaseLayout.nav.faq}</a></li>
             </ul>
           </div>
         </div>
@@ -126,9 +105,9 @@ const { slug, title, seo, $class } = Astro.props;
 
     <!-- Footer -->
     <footer
-      class="p-content pb-inner flex flex-col gap-content w-full max-w-page m-auto"
+      class="p-content flex flex-col gap-content w-full max-w-page m-auto"
     >
-      <div class="flex justify-center gap-content">
+      <div class="flex justify-center gap-content" id="socials">
         {
           pageconfig.socials.map((v) => (
             <SocialMediaIcon
@@ -151,12 +130,6 @@ const { slug, title, seo, $class } = Astro.props;
           {i18n().BaseLayout.footer.maillist_register}
         </Button>
       </a>
-
-      <a
-        href="https://icon-sets.iconify.design/ic/"
-        class="text-white italic text-center text-sm"
-        >{i18n().BaseLayout.footer.google_icon_credits}</a
-      >
     </footer>
   </body>
 </html>

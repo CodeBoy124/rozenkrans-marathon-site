@@ -22,7 +22,7 @@ export function i18nUrl(target_url: string): string {
   if (active_locale == default_locale) {
     return target_url;
   } else {
-    return "/" + active_locale + target_url;
+    return active_locale + "/" + target_url;
   }
 }
 

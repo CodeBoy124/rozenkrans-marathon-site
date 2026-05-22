@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @theme {
-  --spacing-page: 900px;
+  --spacing-page: 1000px;
   --spacing-content: 30px;
   --spacing-inner: 7px;
   --spacing-base: 15px;
@@ -16,4 +16,14 @@
 
 #main {
   scroll-margin-top: 80px;
+}
+
+.prose {
+  width: 100%;
+}
+
+.prose hr {
+  width: 100%;
+  height: 1px;
+  border-color: var(--color-secundary-on-light);
 }
