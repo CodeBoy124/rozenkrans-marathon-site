@@ -27,3 +27,8 @@
   height: 1px;
   border-color: var(--color-secundary-on-light);
 }
+
+.prose ul,
+.prose ol {
+  text-align: left;
+}

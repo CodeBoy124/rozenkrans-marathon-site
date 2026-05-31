@@ -1,24 +1,8 @@
 ---
-import "../styles/global.css";
-import i from "../assets/release-poster.jpeg"
-import { Image } from "astro:assets"
+import { setLocale } from "../translations/i18n";
+import CurrentPage from "../screens/index.astro";
+
+setLocale('nl');
 ---
 
-<html lang="nl">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" href={import.meta.env.BASE_URL + "favicon.ico"} />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-
-        <meta name="description" content="Goed nieuws! Tijdens de Rozenkrans Marathon gaat onze website online! Die editie in de RK Nicolaasparochie te Baarn op zondag 31 mei." />
-        <meta name="keywords" content="Rozenkrans Marathon, Website, Nieuw" />
-
-        <title>Goed nieuws!</title>
-    </head>
-    <body class="bg-[#3a503e] fixed left-0 top-0 w-screen h-screen flex justify-center items-center">
-        <div style="width: 90vh; height: 90vh;">
-            <Image src={i} alt="" layout="constrained" width={1254} height={1254} fetchpriority="high" loading="eager" class="rounded-xl shadow-sm/25" />
-        </div>
-    </body>
-</html>
+<CurrentPage />

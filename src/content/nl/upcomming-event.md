@@ -1,27 +1,24 @@
 ---
-image: /rozenkrans-marathon-site/st-peter-basilica.010.jpg
-signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
+# image: /st-peter-basilica.010.jpg
+# signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
 seo:
-  description: Hier vindt je informatie over de komende Rozenkrans marathon. Deze keer is het op van 31 mei 2026 in Baarn
-  keywords: Rozenkrans, Rozenkrans Marathon, Katholiek, Evenement, Baarn
+  description: Hier vindt je informatie over de komende Rozenkrans marathon!
+  keywords: Rozenkrans, Rozenkrans Marathon, Katholiek, Evenement
 ---
 
-# Rozenkrans Marathon mei 2026
+# Wanneer is de volgende Rozenkrans Marathon?
 
-🗓️ 31 mei 2026, _vanaf 11:00_  
-🧭 RK Baarn _in de RK Nicolaasparochie_  
-🙏 Alle groepen mysteries samen bidden  
-💰 Gratis _om bij te wonen_
+Dat weten we helaas nog niet. Als je up-to-date wilt blijven, meld je dan vooral aan voor de maillijst.
 
-## Planning
+## Wat is normaal de planning op zo'n evenement?
 
-_Als je wilt, kun je er ook later erbij komen, of eerder weggaan, maar dit is de planning._
+Meestal volgen we deze volgorde:
 
-11:00 Eucharistie viering  
-12:30 Lunch  
-13:00 Eerste twee Rozenhoedjes  
-14:15 Pauze en lezing  
-15:15 Laatste twee Rozenhoedjes  
-16:30 Samen eten\*
+1. H. Mis (uiteraard)
+2. Lunch
+3. Eerste twee Rozenhoedjes
+4. Pauze en lezing
+5. Laatste twee Rozenhoedjes
+6. Avondeten
 
-\* _Op eigen kosten (ongeveer €12)_
+Hopelijk tot bij het volgende evenement 👋

@@ -1,28 +1,24 @@
 ---
-image: /rozenkrans-marathon-site/st-peter-basilica.010.jpg
-signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
+# image: /st-peter-basilica.010.jpg
+# signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
 seo:
-  description: Here you'll find information about the upcomming Rosary marathon. This time it is on 31 may 2026 in Baarn (Netherlands).
-  keywords: Rosary, Rosary Marathon, Catholic, Event, Baarn
+  description: Here you'll find information about the upcomming Rosary marathon!
+  keywords: Rosary, Rosary Marathon, Catholic, Event
 ---
 
-# Rosary Marathon may 2026
+# When is the next Rosary Marathon?
 
-🗓️ 31 may 2026, _starting from 11:00_  
-🧭 RK Baarn _in the RK Nicolaas parish_  
-🙏 Praying all groups of mysteries together
-💰 Free _to participate in_  
-🇳🇱 In Dutch, _but everybody is welcome_
+We don't yet know. If you'd like to stay up-to-date, please register using the maillist button at the bottom of the page.
 
-## Schedule
+## What is usually the schedule in an event?
 
-_If you'd prefer to join later, or leave earlier that is possible. This is the standard schedule._
+Usually we follow roughly the following order:
 
-11:00 Eucharistic celabration  
-12:30 Lunch  
-13:00 First two Rosaries  
-14:15 Break and reading  
-15:15 Last two Rosaries  
-16:30 Eating dinner together\*
+1. Mass (of course)
+2. Lunch
+3. First two Rosaries
+4. Break and reading
+5. Last two Rosaries
+6. Dinner
 
-\* _At your own expense (roughly €12)_
+We hope to see you soon 👋
