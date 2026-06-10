@@ -1,7 +1,7 @@
 ---
 title: Lezing over Lourdes
 kind: Lezing
-created_at: 2026-06-09
+created_at: 2026-06-10
 image: /lezing-lourdes-mei-2026/slide-1.png
 galary:
   - image: /lezing-lourdes-mei-2026/slide-2.png
