@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 const ICON_RGX = /^([A-Za-z0-9$_-]+):([A-Za-z0-9$_-]+)$/;
 const IMG_PATH_RGX =
-  /^\/?(([A-Za-z0-9$_\-\.]+)\/)*([A-Za-z0-9$_\-\.]+(\.png|\.jpg|\.webp|\.svg))$/;
+  /^\/?(([A-Za-z0-9$_\-\.]+)\/)*([A-Za-z0-9$_\-\.]+(\.png|\.jpg|\.jpeg|\.webp|\.svg))$/;
 
 const zod_icon = z.custom<`${string}:${string}`>((val) => {
   return typeof val === "string" ? ICON_RGX.test(val) : false;
@@ -14,7 +14,10 @@ const zod_image_path = z.custom<`${string}`>((val) => {
   return typeof val === "string" ? IMG_PATH_RGX.test(val) : false;
 });
 
-const zod_image = z.object({ image: zod_image_path, alt: z.string() });
+const zod_image = z.object({
+  image: zod_image_path,
+  alt: z.optional(z.string()),
+});
 const zod_seo = z.object({
   description: z.string(),
   keywords: z.optional(z.string()),

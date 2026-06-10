@@ -10,7 +10,7 @@ components:
         label: Alt tekst
         type: string
         description: Een enkele regel/paar woorden die de afbeelding omschrijven
-        required: true
+        required: false
   seo:
     type: object
     fields:
