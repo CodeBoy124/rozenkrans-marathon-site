@@ -29,8 +29,8 @@ galary:
   - image: /lezing-lourdes-mei-2026/slide-24.png
   - image: /lezing-lourdes-mei-2026/slide-25.png
 seo:
-  description: Voor het evenement van 31 mei 2026 heeft Martijn van de Graaf een lezing voorbereid. Hier kun je de powerpoint bekijken. Mensen met een zichtsbeperking kunnen deze lezing helaas niet beluisteren
+  description: Voor het evenement van 31 mei 2026 heeft Martijn een lezing voorbereid. Hier kun je de powerpoint bekijken. Mensen met een zichtsbeperking kunnen deze lezing helaas niet beluisteren
   keywords: Rozenkrans, Rozenkrans Marathon, Lezing, Lourdes
 ---
 
-Voor het evenement van 31 mei 2026 heeft Martijn van de Graaf een lezing voorbereid. Hier kun je de powerpoint bekijken. Mensen met een zichtsbeperking kunnen deze lezing helaas niet beluisteren
+Voor het evenement van 31 mei 2026 heeft Martijn een lezing voorbereid. Hier kun je de powerpoint bekijken. Mensen met een zichtsbeperking kunnen deze lezing helaas niet beluisteren
