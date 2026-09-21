@@ -1,24 +1,33 @@
 ---
 # image: /st-peter-basilica.010.jpg
-# signup_url: https://docs.google.com/forms/d/e/1FAIpQLSdoKLtDp-zED1avE70DEuJeLMpTzbj2_zLRPB_noyR-8I88uA/viewform?usp=pp_url&entry.975379508=Toekomstige+evenementen&entry.975379508=Nieuwe+posts
+signup_url: mailto:rozenkransmarathon@gmail.com
 seo:
   description: Here you'll find information about the upcomming Rosary marathon!
   keywords: Rosary, Rosary Marathon, Catholic, Event
 ---
 
-# When is the next Rosary Marathon?
+# Rosary marathon oktober 2026
 
-We don't yet know. If you'd like to stay up-to-date, please register using the maillist button at the bottom of the page.
+Another Rosary marathon is coming up! This time on:
 
-## What is usually the schedule in an event?
+- 📆 18th of oktober, 2026, from 10:00 AM
+- 🧭 Purmerend, in the Nicolaaskerk
+- 🙏 Together we'll pray all groups of mysteries
+- 💰 There is no cost to join, although donations are welcome
 
-Usually we follow roughly the following order:
+Please register via [rozenkransmarathon@gmail.com](mailto:rozenkransmarathon@gmail.com)
 
-1. Mass (of course)
-2. Lunch
-3. First two Rosaries
-4. Break and reading
-5. Last two Rosaries
-6. Dinner
+---
 
-We hope to see you soon 👋
+## Schedule
+
+If you want to, you can join later, or leave earlier, however the following is the standard schedule:
+
+- 10:00 Eucharistic celebration
+- 11:30 Lunch
+- 12:30 First two mysteries of the Rosary
+- 13:45 Break/Reading about St. Dominic receiving the Rosary from Mary
+- 14:45 Last two mysteries of the Rosary
+- 16:00 Eating together\*
+
+\* At your own expense (roughly €12)
