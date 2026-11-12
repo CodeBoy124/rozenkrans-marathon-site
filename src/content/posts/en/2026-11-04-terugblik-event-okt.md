@@ -13,9 +13,8 @@ galary:
   - image: /evenement-okt-2026/foto-pizzas.jpeg
     alt: Milan picked up the pizzas
 seo:
-description: We can look back on a very pleasant and successful edition of the Rosenkrans Marathon! Thank you all and see you at the next edition! 🥳🙏
-
-keywords: Rosary, Rosary Marathon, Retrospective
+  description: We can look back on a very pleasant and successful edition of the Rosenkrans Marathon! Thank you all and see you at the next edition! 🥳🙏
+  keywords: Rosary, Rosary Marathon, Retrospective
 ---
 
 On the 18th of October we were in Purmerend, at the St. Nicholas parish. It was nice and we also had a room where we could all eat and pray together.
