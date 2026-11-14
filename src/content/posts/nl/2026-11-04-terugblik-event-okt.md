@@ -19,7 +19,7 @@ seo:
 
 18 oktober waren we in Purmerend, bij de Nicolaaskerk. Het was gezellig en We hadden ook een zaal gekregen, waar we met z'n allen konden eten en bidden.
 
-Tijdens de Mis had de priester ons ook in het bijzonder welkomgeheten en de andere kerkgangers uitgenodigd om mee te doen. Ook was er vanuit de parochie was er ook een vrijwilliger die nasi had klaargemaakt en iedereen zat daar goed van te smullen.
+Tijdens de Mis had de priester ons ook in het bijzonder welkomgeheten en de andere kerkgangers uitgenodigd om mee te doen. Ook was er vanuit de parochie een vrijwilliger die nasi had klaargemaakt en iedereen zat daar goed van te smullen.
 
 Na die lunch en de eerste twee groepen mysteries hadden we een lezing van Arthur, die ging over de H. Dominicus en het begin van de Rozenkrans. Het was ook wel mooi we dit in de Mariakapel was, waar we dan ook daarna de laatste twee groepen mysteries baden. Als je de lezing wil terugkijken, het is [hier](#) te vinden!
 

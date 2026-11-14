@@ -19,11 +19,9 @@ seo:
 
 On the 18th of October we were in Purmerend, at the St. Nicholas parish. It was nice and we also had a room where we could all eat and pray together.
 
-During Mass, the priest also warmly welcomed us and invited other churchgoers to join in. There was also a volunteer from the parish who
-prepared nasi, and everyone was enjoyed the food with great relish.
+During Mass, the priest also warmly welcomed us and invited other churchgoers to join in. There was also a volunteer from the parish who prepared nasi, and everyone was enjoyed the food with great relish.
 
-After the lunch and the first two mystery groups, we had a lecture by Arthur, which was about St. Dominic and the beginning of the Rosary. It was
-also very nice that we held this in the St. Mary chappel, where we then also prayed the last two mystery groups. If you want to view the lecture, you can find it [here](#)!
+After the lunch and the first two mystery groups, we had a lecture by Arthur, which was about St. Dominic and the beginning of the Rosary. It was also very nice that we held this in the St. Mary chappel, where we then also prayed the last two mystery groups. If you want to view the lecture, you can find it [here](#)!
 
 Of course, we also had a dinner as a closing activity. This time it was with pizza, and we had the opportunity to talk after a successful day.
 
