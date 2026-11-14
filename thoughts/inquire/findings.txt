@@ -1,0 +1,33 @@
+Introduction:
+This document contains the requirements and findings gathered before implementing PDF path integration for markdown posts. It summarizes the feature specifications including file locations, field names, rendering behavior, and implementation considerations.
+
+Inquiry Findings - PDF Path Integration Feature
+
+Post Structure:
+- Posts are located under src/content/posts/nl or src/content/posts/en depending on language
+- Each post has a timestamp in the filename (yyyy-mm-dd)
+
+Configuration:
+- Field name for PDF path: pdf_path
+- Path format: relative to the `public` folder. For example, if the path `info.pdf` is used, the actual file is located under `public/info.pdf`. This should be handled by Astro itself.
+- No path validation required
+- PDF is assumed to exist (no error handling needed)
+
+Rendering:
+- PDF should be rendered below the title but above the main content/body
+- Render method: iframe tag (client-side). The src should be exactly the same as the field value (so `info.pdf` stays `info.pdf` instead of turning into `public/info.pdf`)
+- Location: on the page of the respective post
+
+Implementation:
+- Using Astro static site generator with frontend-only
+- No backend or existing template/component
+- Relevant schema's and pages should be modified
+
+Key Questions Answered:
+1. What field contains the PDF path? → pdf_path
+2. What is the path format? → relative to the `public` folder
+3. What Astro-specific considerations? → Frontend-only, no backend, will create Astro component for iframe
+4. Where should it render? → Below title, above main content body
+5. How to handle missing PDF? → Assume it exists, no special handling needed
+
+These findings capture all necessary requirements for implementation.
