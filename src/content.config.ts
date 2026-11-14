@@ -31,6 +31,7 @@ const posts = defineCollection({
     title: z.string(),
     kind: z.enum(["Evenement", "Lezing", "Overig"]),
     created_at: z.date(),
+    pdf_path: z.optional(z.string()),
     image: zod_image_path,
     galary: z.optional(z.array(zod_image)),
     seo: zod_seo,
