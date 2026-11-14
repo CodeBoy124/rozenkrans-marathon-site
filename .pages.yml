@@ -191,6 +191,12 @@ content:
             label: Omslagafbeelding
             type: image
             required: true
+          - name: pdf_path
+            label: Pdf
+            required: false
+            type: file
+            options:
+              extensions: [pdf]
           - name: galary
             label: Galarij
             description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
@@ -330,6 +336,12 @@ content:
             label: Omslagafbeelding
             type: image
             required: true
+          - name: pdf_path
+            label: Pdf
+            required: false
+            type: file
+            options:
+              extensions: [pdf]
           - name: galary
             label: Galarij
             description: Als je dit leeg laat, wordt de galarij niet weergeven, maar misschien dat je dit bij evenementen dit veld wel nodig kan hebben.
