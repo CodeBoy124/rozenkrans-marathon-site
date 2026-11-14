@@ -1,0 +1,123 @@
+# Concrete PDF Viewer Action Plan
+- Based on @thoughts/inquire/findings.txt requirements and actual project structure
+
+## Project Structure (as observed)
+- Posts stored in: `./src/content/posts/en/`, `./src/content/posts/nl/`
+  - Files named with timestamp: e.g., `2026-05-08-the-website-is-finished.md`
+- Post page templates: `./src/pages/en/post/[slug].astro` (and similar for other langs)
+- Post rendering screen: `./src/screens/post/single.astro`
+- Language locale handling: pages set locale, screens use translation i18n
+
+## High-Level Implementation Strategy
+Since Astro is static-site-only and this is frontend-only:
+1. Add PDF path field extraction in post metadata (already defined as `pdf_path`)
+2. Modify the rendered screen (`single.astro`) to insert the PDF viewer below the title
+3. Create reusable Astro component (`src/components/PdfViewer.astro`) that renders an iframe
+
+## Concrete Tasks (ordered implementation)
+
+### Task 1: Create PDF Viewer Component
+- File: `src/components/PdfViewer.astro`
+- Props: `pdfPath` (string, e.g., "info.pdf")
+- Renders: iframe with exact src matching pdfPath (no "public/" prefix)
+- Example component:
+  ```astro
+  <iframe 
+      src={props.pdfPath}
+      width="100%" 
+      height="600" 
+      style="border: none; overflow: hidden;" 
+      loading="lazy">
+  </iframe>
+  ```
+
+### Task 2: Modify Post Screen Template (`src/screens/post/single.astro`)
+- Insert `<PdfViewer pdfPath={post.data.pdf_path} />` between the post title and main article content
+- Existing template currently has:
+  ```astro
+  <BaseLayout ... />
+  <div class="flex flex-col gap-inner text-center">
+      <h2 class="text-3xl font-semibold">{post.data.title}</h2>
+      <p>...</p>
+  </div>
+  <BaseImage src={post.data.image} alt="" fetchpriority="high" />
+  <article id="main" class="prose max-w-none">
+      <Content />
+  </article>
+  ```
+- Updated structure:
+  ```astro
+  <BaseLayout ... />
+  <div class="flex flex-col gap-inner text-center">
+      <h2 class="text-3xl font-semibold">{post.data.title}</h2>
+      <p>...</p>
+      <!-- PDF viewer component -->
+      <PdfViewer pdfPath={post.data.pdf_path} />
+  </div>
+  <BaseImage src={post.data.image} alt="" fetchpriority="high" />
+  <article id="main" class="prose max-w-none">
+      <Content />
+  </article>
+  ```
+- If `pdf_path` is undefined, the component should render nothing gracefully (no extra markup)
+
+### Task 3: Ensure Metadata Schema includes `pdf_path`
+- Verify the existing content schema already has `pdf_path` field
+- If missing, update the schema file (typically in `./src/content/posts/index.md` or schema definition)
+- Example schema addition:
+  ```markdown
+  - name: post
+    fields:
+      - name: pdf_path
+        type: string
+        description: PDF file path relative to public folder (e.g., "info.pdf")
+  ```
+
+### Task 4: Handle Language-Specific Posts
+- The screen template already receives `slug` and `post` props, which includes language-specific data
+- `pdf_path` should be available regardless of language (same field name)
+- No extra changes needed beyond what's in Task 2 (component works for all languages)
+
+### Task 5: Build & Test
+- Run `npm run build` to verify compilation succeeds
+- Verify PDF path field is populated in test posts (check sample markdown files)
+- Deploy or test locally with a post that has `pdf_path` defined
+- Verify iframe renders correctly below title, above main article body
+- Confirm no "public/" prefix is added to iframe src
+
+## Important Observations from Actual Files
+- Post metadata (including `pdf_path`) comes from the markdown files in `./src/content/posts/`
+- The page template (`src/pages/en/post/[slug].astro`) renders the screen via `CurrentPage` import
+- The actual visual rendering happens in `src/screens/post/single.astro`
+- Language locale is set on the page, not the screen, but the screen receives the correct post data
+
+## Files to Modify
+1. `src/components/PdfViewer.astro` (new component file)
+2. `src/screens/post/single.astro` (modify template to insert PDF viewer)
+3. Potentially schema file if `pdf_path` is not yet defined (check existing schema)
+
+## Dependencies & Prerequisites
+- Astro static-site generator - already applied
+- PDF files must exist in `public/` (e.g., `public/info.pdf`) based on `pdf_path` value
+- `pdf_path` field must be defined in post metadata during content build
+- No backend required
+- File extensions in `pdf_path` must be valid PDFs (spec assumes existence)
+
+## Acceptance Criteria
+- PDF viewer iframe appears exactly where specified (below the post title, above the main content article)
+- iframe src attribute matches `pdf_path` field value exactly (no "public/" prefix)
+- Works for both language-specific posts (nl, en) using the existing screen template
+- No backend or error handling required (as per findings)
+- All existing post functionality remains unchanged
+- Component gracefully handles undefined or empty `pdf_path`
+
+## Next Steps (ordered)
+1. Create `src/components/PdfViewer.astro` with iframe implementation
+2. Modify `src/screens/post/single.astro` to insert PDF viewer between title and main content
+3. Verify schema includes `pdf_path` field (check existing schema file)
+4. Build project (`npm run build`)
+5. Test with a sample post that has `pdf_path` defined
+6. Deploy and validate iframe rendering and position
+
+Version: based on @thoughts/inquire/findings.txt findings and actual project structure
+Author: automated planning with structural analysis

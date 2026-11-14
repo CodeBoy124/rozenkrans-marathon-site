@@ -1,0 +1,14 @@
+---
+interface Props {
+    pdfPath: string
+}
+const {pdfPath} = Astro.props;
+---
+
+<iframe
+    src={pdfPath}
+    width="100%"
+    height="600"
+    style="border: none; overflow: hidden;"
+    loading="lazy"
+/>
